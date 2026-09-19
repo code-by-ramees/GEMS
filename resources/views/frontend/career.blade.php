@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Careers | GEMS')
+@section('meta_description', 'Build a rewarding career in child healthcare with GEMS in Kozhikode, Kerala. Openings for speech therapists, occupational therapists, and special educators.')
 
 @section('content')
     {{-- ================= HERO SECTION ================= --}}

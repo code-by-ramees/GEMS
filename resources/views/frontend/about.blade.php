@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'About Us | GEMS')
+@section('meta_description', 'Learn about GEMS Child Development Centre in Kozhikode, Kerala. Our multidisciplinary team brings 10+ years of clinical excellence in pediatric child care.')
 
 @section('content')
     {{-- ================= HERO SECTION ================= --}}
@@ -40,7 +41,7 @@
                 {{-- Image --}}
                 <div data-aos="fade-right">
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="{{ asset('images/image2.jpg') }}" alt="Vision and Mission"
+                        <img src="{{ asset('images/image2.jpg') }}" alt="GEMS Child Development Centre Vision and Mission"
                             class="w-full h-auto object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
@@ -305,14 +306,14 @@
             <div class="flex flex-col lg:flex-row gap-12 items-center">
                 <div class="lg:w-1/3 text-center lg:text-left" data-aos="fade-right">
                     <div class="relative inline-block">
-                        <img src="{{ asset('images/image2.jpg') }}" alt="Founder"
+                        <img src="{{ asset('images/Mushthaq.P.PNG') }}" alt="Mushtaq - Founder of GEMS Child Development Centre"
                             class="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-full border-8 border-white shadow-2xl">
                         <div class="absolute bottom-4 right-4 bg-[#32A8B8] text-white p-3 rounded-full shadow-lg">
                             <span class="text-2xl">❝</span>
                         </div>
                     </div>
                     <div class="mt-6">
-                        <h3 class="text-2xl font-bold text-gray-900">Mushtaq</h3>
+                        <p class="text-2xl font-bold text-gray-900">Mushtaq</p>
                         <p class="text-[#32A8B8] font-medium text-lg">Founder & Director</p>
                     </div>
                 </div>
@@ -335,9 +336,9 @@
                             to listen, to care, and to work tirelessly to help your child shine."
                         </p>
                     </div>
-                    <div class="mt-8">
+                    <!-- <div class="mt-8">
                         <img src="{{ asset('images/signature.png') }}" alt="Signature" class="h-16 opacity-60">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

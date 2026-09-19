@@ -19,7 +19,7 @@
 
             <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center mt-2 sm:mt-0">
                 <div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Subscribe to Our Newsletter</h3>
+                    <p class="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Subscribe to Our Newsletter</p>
                     <p class="text-gray-300 text-sm sm:text-base">Get the latest updates on child development, parenting tips, and center
                         news.</p>
                 </div>
@@ -47,7 +47,7 @@
             {{-- Brand & Description --}}
             <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="100">
                 <div class="flex items-center gap-3 mb-6">
-                    <img src="{{ asset('images/Logo.png') }}" alt="AIMS CDC Logo" class="h-20 w-auto">
+                    <img src="{{ asset('images/Logo.png') }}" alt="GEMS Child Development Centre Logo" class="h-20 w-auto">
                 </div>
                 <p class="text-gray-300 leading-relaxed mb-6 max-w-lg">
                     Kerala's premier child development center providing comprehensive therapies,
@@ -59,7 +59,7 @@
                 <div>
                     <p class="text-white font-medium mb-4">Follow Us</p>
                     <div class="flex items-center gap-3">
-                        <a href="https://www.facebook.com/share/1CpQzb7gie/?mibextid=wwXIfr" target="_blank"
+                        <a href="https://www.facebook.com/share/1CpQzb7gie/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
                             class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 hover:scale-110">
                             <span class="sr-only">Facebook</span>
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@
                             </svg>
                         </a>
                         <a href="https://www.instagram.com/gemscdc?igsh=MXc2MmplZHR1aG1yNQ%3D%3D&utm_source=qr"
-                            target="_blank"
+                            target="_blank" rel="noopener noreferrer"
                             class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 hover:scale-110">
                             <span class="sr-only">Instagram</span>
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
                         </a>
-                        <a href="https://youtube.com" target="_blank"
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
                             class="w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 hover:scale-110">
                             <span class="sr-only">YouTube</span>
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@
                                     d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                             </svg>
                         </a>
-                        <a href="https://wa.me/917994502501" target="_blank"
+                        <a href="https://wa.me/917994502501" target="_blank" rel="noopener noreferrer"
                             class="w-10 h-10 rounded-full bg-gray-800 hover:bg-green-600 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 hover:scale-110">
                             <span class="sr-only">WhatsApp</span>
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@
 
             {{-- Quick Links --}}
             <div data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-white font-bold text-lg mb-6 pb-2 border-b border-gray-700">Quick Links</h4>
+                <p class="text-white font-bold text-lg mb-6 pb-2 border-b border-gray-700">Quick Links</p>
                 <ul class="space-y-3">
                     @php
                         $quickLinks = [
@@ -107,7 +107,6 @@
                             ['name' => 'Our Team', 'url' => '/team', 'icon' => '🤝'],
                             ['name' => 'Services', 'url' => '/services', 'icon' => '🎯'],
                             ['name' => 'Training', 'url' => '/training', 'icon' => '🎓'],
-                            ['name' => 'Testimonials', 'url' => '/testimonials', 'icon' => '⭐'],
                             ['name' => 'Gallery', 'url' => '/gallery', 'icon' => '🖼️'],
                             ['name' => 'Careers', 'url' => '/career', 'icon' => '💼'],
                             ['name' => 'Contact Us', 'url' => '/contact', 'icon' => '📞'],
@@ -130,7 +129,7 @@
 
             {{-- Services --}}
             <div data-aos="fade-up" data-aos-delay="300">
-                <h4 class="text-white font-bold text-lg mb-6 pb-2 border-b border-gray-700">Our Services</h4>
+                <p class="text-white font-bold text-lg mb-6 pb-2 border-b border-gray-700">Our Services</p>
                 <ul class="space-y-3">
                     @php
                         $services = [
@@ -139,7 +138,7 @@
                             'Special Education',
                             'Behavioral Therapy',
                             'Psychotherapy & Counseling',
-                            'psychological Assessment',
+                            'Psychological Assessment',
                         ];
                     @endphp
 
@@ -154,7 +153,7 @@
 
             {{-- Contact Info --}}
             <div data-aos="fade-up" data-aos-delay="400">
-                <h4 class="text-white font-bold text-lg mb-6 pb-2 border-b border-gray-700">Contact Info</h4>
+                <p class="text-white font-bold text-lg mb-6 pb-2 border-b border-gray-700">Contact Info</p>
                 <ul class="space-y-4">
                     <li class="flex items-start gap-3">
                         <div class="w-8 h-8 rounded-full bg-[#32A8B833] flex items-center justify-center flex-shrink-0">
@@ -173,8 +172,12 @@
                         </div>
                         <div>
                             <p class="text-white font-medium">Call Us</p>
+                            <a href="tel:+917994502501"
+                                class="text-gray-400 text-sm hover:text-[#32A8B8] transition-colors block">
+                                +91 7994502501
+                            </a>
                             <a href="tel:+918086497941"
-                                class="text-gray-400 text-sm hover:text-[#32A8B8] transition-colors">
+                                class="text-gray-400 text-sm hover:text-[#32A8B8] transition-colors block">
                                 +91 8086497941
                             </a>
                         </div>
@@ -217,7 +220,6 @@
                 <div class="flex items-center gap-6 text-sm text-gray-400">
                     <a href="/privacy-policy" class="hover:text-[#32A8B8] transition-colors">Privacy Policy</a>
                     <a href="/terms" class="hover:text-[#32A8B8] transition-colors">Terms of Service</a>
-                    <a href="/contact" class="hover:text-[#32A8B8] transition-colors">Sitemap</a>
                     
                 </div>
             </div>
@@ -245,8 +247,8 @@
     </div>
 
     {{-- Floating CTA for mobile --}}
-    <div
-        class="lg:hidden fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[#32A8B8] to-[#EA6F71] text-white p-4 shadow-lg">
+    <div id="mobile-bottom-cta"
+        class="lg:hidden fixed z-30 bottom-0 left-0 right-0 bg-gradient-to-r from-[#32A8B8] to-[#EA6F71] text-white p-4 shadow-lg transition-all duration-300">
         <div class="flex items-center justify-between max-w-7xl mx-auto px-4">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">

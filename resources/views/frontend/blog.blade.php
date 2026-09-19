@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Blog | GEMS')
+@section('meta_description', 'Read expert insights on child development, parenting tips, speech milestones, and sensory wellness from the therapeutic specialists at GEMS Kozhikode, Kerala.')
 
 @section('content')
     {{-- ================= HERO SECTION ================= --}}
@@ -44,7 +45,7 @@
                         style="background-color: rgba(50, 168, 184, 0.05); border-color: rgba(50, 168, 184, 0.1);"
                         data-aos="fade-up">
                         <div class="h-64 sm:h-80 overflow-hidden relative">
-                            <img src="{{ asset('images/image1.png') }}" alt="Blog Post"
+                            <img src="{{ asset('images/image1.png') }}" alt="5 Early Signs of Speech Delay in Toddlers"
                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                             <div
                                 class="absolute top-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-xl text-sm font-bold text-[#32A8B8] shadow-sm">
@@ -77,7 +78,7 @@
                         style="background-color: rgba(234, 111, 113, 0.03); border-color: rgba(234, 111, 113, 0.1);"
                         data-aos="fade-up" data-aos-delay="100">
                         <div class="h-64 sm:h-80 overflow-hidden relative">
-                            <img src="{{ asset('images/image2.jpg') }}" alt="Blog Post"
+                            <img src="{{ asset('images/image2.jpg') }}" alt="Creating a Sensory-Friendly Home Environment"
                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
                             <div
                                 class="absolute top-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-xl text-sm font-bold text-[#EA6F71] shadow-sm">

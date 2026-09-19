@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('title', 'Child Development Centre in Kozhikode, Kerala | GEMS')
+@section('meta_description', "GEMS Child Development Centre in Kozhikode, Kerala offers expert pediatric therapies, autism support, speech therapy, and holistic care for your child.")
+
 @section('content')
 
         {{-- ================= HERO SECTION ================= --}}
@@ -979,13 +982,13 @@
                                     <div class="lg:hidden flex flex-col items-center">
                                         <div class="mobile-hero-image-container">
                                             <div class="mobile-organic-circle">
-                                                <img src="{{ asset('images/image9.jpg') }}" alt="Wellness">
+                                                <img src="{{ asset('images/image9.jpg') }}" alt="Wellness" fetchpriority="high">
                                             </div>
                                         </div>
 
                                         <div class="mobile-content-card">
                                             <span class="mobile-subheading">Best Child Development Center In Kerala</span>
-                                            <h1 class="hero-title">About Us</h1>
+                                            <h2 class="hero-title">About Us</h2>
                                             <p class="hero-description">
                                                 Our center is designed to be a safe, caring, and hopeful environment where every
                                                 child's unique potential is recognized and nurtured.
@@ -1018,7 +1021,7 @@
                                 <div class="organic-shape-container hidden lg:block">
                                     <div class="organic-image-mask">
                                         <img src="{{ asset('images/image7.jpg') }}" class="w-full h-full object-cover"
-                                            alt="Wellness Experience">
+                                            alt="Wellness Experience" fetchpriority="high">
                                     </div>
                                 </div>
 
@@ -1072,13 +1075,13 @@
                                     <div class="lg:hidden flex flex-col items-center">
                                         <div class="mobile-hero-image-container">
                                             <div class="mobile-organic-circle">
-                                                <img src="{{ asset('images/image8.jpg') }}" alt="Expert Guidance">
+                                                <img loading="lazy" decoding="async" src="{{ asset('images/image8.jpg') }}" alt="Expert Guidance">
                                             </div>
                                         </div>
 
                                         <div class="mobile-content-card">
                                             <span class="mobile-subheading">Comprehensive Expert Guidance</span>
-                                            <h1 class="hero-title">Join Our Family</h1>
+                                            <h2 class="hero-title">Join Our Family</h2>
                                             <p class="hero-description">
                                                 Join over 1000 families who trust our certified therapists for holistic
                                                 developmental care and specialized support.
@@ -1090,11 +1093,11 @@
 
                                     {{-- Desktop layout --}}
                                     <div class="hidden lg:block">
-                                        <h1 class="hero-title text-5xl lg:text-7xl mb-8 text-custom-lime">
+                                        <h2 class="hero-title text-5xl lg:text-7xl mb-8 text-custom-lime">
                                             Empowering<br>
                                             Potential with<br>
                                             Expert Guidance
-                                        </h1>
+                                        </h2>
 
                                         <p
                                             class="hero-description text-gray-600 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg">
@@ -1111,7 +1114,7 @@
                                 {{-- RIGHT IMAGE - Hidden on mobile --}}
                                 <div class="organic-shape-container hidden lg:block">
                                     <div class="organic-image-mask">
-                                        <img src="{{ asset('images/image6.jpg') }}" class="w-full h-full object-cover"
+                                        <img loading="lazy" decoding="async" src="{{ asset('images/image6.jpg') }}" class="w-full h-full object-cover"
                                             alt="Expert Care">
                                     </div>
                                 </div>
@@ -1154,13 +1157,13 @@
                                     <div class="lg:hidden flex flex-col items-center">
                                         <div class="mobile-hero-image-container">
                                             <div class="mobile-organic-circle">
-                                                <img src="{{ asset('images/image10.png') }}" alt="Growth Journey">
+                                                <img loading="lazy" decoding="async" src="{{ asset('images/image10.png') }}" alt="Growth Journey">
                                             </div>
                                         </div>
 
                                         <div class="mobile-content-card">
                                             <span class="mobile-subheading">Supporting Every Step</span>
-                                            <h1 class="hero-title">Our Services</h1>
+                                            <h2 class="hero-title">Our Services</h2>
                                             <p class="hero-description">
                                                 From early intervention to specialized therapies, we walk alongside families at
                                                 every stage of development.
@@ -1172,11 +1175,11 @@
 
                                     {{-- Desktop layout --}}
                                     <div class="hidden lg:block">
-                                        <h1 class="hero-title text-5xl lg:text-7xl mb-8 text-custom-coral">
+                                        <h2 class="hero-title text-5xl lg:text-7xl mb-8 text-custom-coral">
                                             Supporting Every<br>
                                             Child's Growth<br>
                                             Journey
-                                        </h1>
+                                        </h2>
 
                                         <p
                                             class="hero-description text-gray-600 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg">
@@ -1193,7 +1196,7 @@
                                 {{-- RIGHT IMAGE - Hidden on mobile --}}
                                 <div class="organic-shape-container hidden lg:block">
                                     <div class="organic-image-mask">
-                                        <img src="{{ asset('images/image4.jpg') }}" class="w-full h-full object-cover"
+                                        <img loading="lazy" decoding="async" src="{{ asset('images/image4.jpg') }}" class="w-full h-full object-cover"
                                             alt="Child Development Care">
                                     </div>
                                 </div>
@@ -1278,7 +1281,7 @@
                             </div>
                             <div
                                 class="relative w-24 h-24 rounded-full bg-white p-1 border border-gray-100 shadow-sm relative z-10">
-                                <img src="{{ asset('images/Mushthaq.P.PNG') }}" class="w-full h-full object-cover rounded-full"
+                                <img loading="lazy" decoding="async" src="{{ asset('images/Mushthaq.P.PNG') }}" width="96" height="96" loading="lazy" class="w-full h-full object-cover rounded-full"
                                     alt="Mushtaq - Founder & CEO">
                             </div>
                         </div>
@@ -1488,7 +1491,7 @@
                                     style="background-color: {{ $service['bgColor'] }}; border: 1px solid rgba(0,0,0,0.03);">
                                     {{-- We apply a css filter hack or specific styled icon if needed, for now we load the SVG and
                                     let it display normally. Ideally these are single-color SVGs --}}
-                                    <img src="{{ asset('images/icons/' . $service['icon']) }}" alt="{{ $service['title'] }}"
+                                    <img loading="lazy" decoding="async" src="{{ asset('images/icons/' . $service['icon']) }}" alt="{{ $service['title'] }}"
                                         class="service-icon-img" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));">
                                 </div>
                                 <h3 class="service-card-title">{{ $service['title'] }}</h3>
@@ -1592,10 +1595,10 @@
                                     <div class="service-card-v2" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}"
                                         style="background-color: {{ $service['bgColor'] }}; border: 1px solid {{ $service['borderColor'] }};">
                                         <div class="card-top-image-v2">
-                                            <img src="{{ asset($service['image']) }}" alt="{{ $service['title'] }}">
+                                            <img loading="lazy" decoding="async" src="{{ asset($service['image']) }}" alt="{{ $service['title'] }}" width="400" height="300" loading="lazy">
                                             <div class="icon-bubble-v2" style="background-color: {{ $service['color'] }}">
-                                                <img src="{{ asset('images/icons/' . $service['icon']) }}"
-                                                    alt="{{ $service['title'] }}">
+                                                <img loading="lazy" decoding="async" src="{{ asset('images/icons/' . $service['icon']) }}"
+                                                    alt="{{ $service['title'] }}" width="32" height="32" loading="lazy">
                                             </div>
                                         </div>
                                         <div class="card-body-v2">
@@ -2201,11 +2204,123 @@
         {{-- ================= TESTIMONIALS ================= --}}
         <section class="py-16 lg:py-24 relative overflow-hidden bg-white">
             <div class="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 text-transparent bg-clip-text"
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 text-transparent bg-clip-text"
                     style="background-image: linear-gradient(to right, #00A79D, #EA6F71); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
                     data-aos="fade-up">
                     Stories of Hope & Success
                 </h2>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-14 text-base sm:text-lg" data-aos="fade-up" data-aos-delay="50">
+                    Real journeys, real milestones. Hear directly from parents whose children found their voice and confidence at GEMS.
+                </p>
+
+                {{-- Structured Data for Video SEO (E-E-A-T & Google Rich Snippets) --}}
+                <script type="application/ld+json">
+                {!! json_encode([
+                    '@context' => 'https://schema.org',
+                    '@graph' => [
+                        [
+                            '@type' => 'VideoObject',
+                            'name' => 'Parent Story: Remarkable Progress at GEMS Child Development Centre',
+                            'description' => 'Mother of a 4-year-old boy shares her experience with pediatric therapy at GEMS Kozhikode, seeing notable improvements in speech, hyperactivity, and eye contact.',
+                            'thumbnailUrl' => asset('images/video-story-thumb-1.webp'),
+                            'uploadDate' => '2024-11-01T09:00:00+05:30',
+                            'duration' => 'PT1M30S',
+                            'contentUrl' => asset('videos/gems-testimonial-1.mp4'),
+                            'embedUrl' => url('/') . '#testimonials',
+                            'inLanguage' => 'ml',
+                            'publisher' => [
+                                '@type' => 'MedicalOrganization',
+                                'name' => 'GEMS Child Development Centre',
+                                'url' => url('/'),
+                                'logo' => [
+                                    '@type' => 'ImageObject',
+                                    'url' => asset('images/Logo.png'),
+                                ],
+                            ],
+                        ],
+                        [
+                            '@type' => 'VideoObject',
+                            'name' => 'Parent Testimonial: Caring Therapy & Guidance at GEMS Calicut',
+                            'description' => 'Mother of a 9-year-old child shares her heartfelt feedback on the transformative pediatric therapy and dedicated therapists at GEMS Child Development Centre.',
+                            'thumbnailUrl' => asset('images/video-story-thumb-2.webp'),
+                            'uploadDate' => '2024-11-01T09:00:00+05:30',
+                            'duration' => 'PT1M2S',
+                            'contentUrl' => asset('videos/gems-testimonial-2.mp4'),
+                            'embedUrl' => url('/') . '#testimonials',
+                            'inLanguage' => 'ml',
+                            'publisher' => [
+                                '@type' => 'MedicalOrganization',
+                                'name' => 'GEMS Child Development Centre',
+                                'url' => url('/'),
+                                'logo' => [
+                                    '@type' => 'ImageObject',
+                                    'url' => asset('images/Logo.png'),
+                                ],
+                            ],
+                        ],
+                    ],
+                ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+                </script>
+
+                <!-- ================= VERTICAL VIDEO STORIES (REELS) ================= -->
+                <div class="mb-20" data-aos="fade-up" data-aos-delay="100">
+                    <!-- 2 Vertical Reel Cards Grid -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-8 lg:gap-12 max-w-4xl mx-auto px-4">
+                        
+                        {{-- Story Card 1 --}}
+                        <div class="group relative w-full max-w-[280px] sm:max-w-[310px] aspect-[9/16] rounded-[28px] overflow-hidden shadow-[0_14px_35px_rgba(0,0,0,0.12)] border border-gray-100 cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_45px_rgba(0,102,132,0.25)] bg-black"
+                             onclick="openVideoModal('{{ asset('videos/gems-testimonial-1.mp4') }}')">
+                            
+                            {{-- Poster Image (WebP lightweight) --}}
+                            <img src="{{ asset('images/video-story-thumb-1.webp') }}" 
+                                 alt="Parent video testimonial at GEMS"
+                                 width="540" height="960" loading="lazy" decoding="async"
+                                 class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105">
+
+                            {{-- Subtle Ambient Hover Overlay --}}
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-colors duration-300 pointer-events-none"></div>
+
+                            {{-- Center Play Button with Soft Pulsing Aura --}}
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                                <div class="relative flex items-center justify-center">
+                                    <span class="absolute w-20 h-20 rounded-full bg-[#00A79D]/30 animate-ping"></span>
+                                    <div class="w-16 h-16 rounded-full bg-white/95 backdrop-blur-md flex items-center justify-center text-[#006684] shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                                        <svg class="w-7 h-7 translate-x-0.5 text-[#006684]" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Story Card 2 --}}
+                        <div class="group relative w-full max-w-[280px] sm:max-w-[310px] aspect-[9/16] rounded-[28px] overflow-hidden shadow-[0_14px_35px_rgba(0,0,0,0.12)] border border-gray-100 cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_22px_45px_rgba(0,102,132,0.25)] bg-black"
+                             onclick="openVideoModal('{{ asset('videos/gems-testimonial-2.mp4') }}')">
+                            
+                            {{-- Poster Image (WebP lightweight) --}}
+                            <img src="{{ asset('images/video-story-thumb-2.webp') }}" 
+                                 alt="Parent video testimonial at GEMS"
+                                 width="540" height="960" loading="lazy" decoding="async"
+                                 class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105">
+
+                            {{-- Subtle Ambient Hover Overlay --}}
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/25 transition-colors duration-300 pointer-events-none"></div>
+
+                            {{-- Center Play Button with Soft Pulsing Aura --}}
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                                <div class="relative flex items-center justify-center">
+                                    <span class="absolute w-20 h-20 rounded-full bg-[#00A79D]/30 animate-ping"></span>
+                                    <div class="w-16 h-16 rounded-full bg-white/95 backdrop-blur-md flex items-center justify-center text-[#006684] shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                                        <svg class="w-7 h-7 translate-x-0.5 text-[#006684]" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
 
                 <!-- Google Reviews Widget Layout -->
                 <div class="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 w-full" data-aos="fade-up"
@@ -2226,7 +2341,7 @@
                         <p class="text-[15px] text-[#5f6368] mb-5 font-medium" style="font-family: Arial, sans-serif;">Based on
                             <span class="font-bold text-[#202124]">72 reviews</span>
                         </p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                        <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width="100" height="32" loading="lazy"
                             class="h-8">
                     </div>
 
@@ -2265,8 +2380,8 @@
                                             <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">2024-08-12</div>
                                         </div>
                                     </div>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" class="w-5 h-5 mt-1">
+                                    <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
                                 </div>
                                 <div class="flex items-center gap-1 mb-3">
                                     <div class="flex gap-0.5">
@@ -2306,8 +2421,8 @@
                                             <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">2024-11-04</div>
                                         </div>
                                     </div>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" class="w-5 h-5 mt-1">
+                                    <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
                                 </div>
                                 <div class="flex items-center gap-1 mb-3">
                                     <div class="flex gap-0.5">
@@ -2347,8 +2462,8 @@
                                             <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">2025-01-15</div>
                                         </div>
                                     </div>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" class="w-5 h-5 mt-1">
+                                    <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
                                 </div>
                                 <div class="flex items-center gap-1 mb-3">
                                     <div class="flex gap-0.5">
@@ -2387,8 +2502,8 @@
                                             <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">2025-02-28</div>
                                         </div>
                                     </div>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" class="w-5 h-5 mt-1">
+                                    <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
                                 </div>
                                 <div class="flex items-center gap-1 mb-3">
                                     <div class="flex gap-0.5">
@@ -2480,6 +2595,90 @@
                         });
                     });
                 </script>
+
+                <!-- ================= VIDEO THEATER LIGHTBOX MODAL ================= -->
+                <div id="video-story-modal" 
+                     class="fixed inset-0 z-[99999] hidden items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md opacity-0 transition-opacity duration-300"
+                     role="dialog" 
+                     aria-modal="true"
+                     aria-label="Parent Video Story Player">
+                    
+                    {{-- Backdrop Click to Close --}}
+                    <div class="absolute inset-0 cursor-pointer" onclick="closeVideoModal()"></div>
+
+                    {{-- Modal Window (Sleek Smartphone Reel Frame) --}}
+                    <div class="relative z-10 w-full max-w-[360px] sm:max-w-[400px] aspect-[9/16] max-h-[90vh] bg-black rounded-[32px] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.6)] border border-white/20 flex flex-col items-center justify-center">
+                        
+                        {{-- Close Button --}}
+                        <button onclick="closeVideoModal()" 
+                                class="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md transition-transform hover:scale-110 shadow-lg cursor-pointer"
+                                aria-label="Close Video">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+
+                        {{-- HTML5 Video Player --}}
+                        <video id="modal-video-player"
+                               class="w-full h-full object-cover"
+                               controls
+                               playsinline
+                               preload="none">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <script>
+                    function openVideoModal(videoSrc) {
+                        const modal = document.getElementById('video-story-modal');
+                        const video = document.getElementById('modal-video-player');
+                        
+                        if (!modal || !video) return;
+
+                        video.src = videoSrc;
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+                        
+                        requestAnimationFrame(() => {
+                            modal.classList.remove('opacity-0');
+                            modal.classList.add('opacity-100');
+                        });
+
+                        video.play().catch(err => {
+                            console.log('Video autoplay deferred:', err);
+                        });
+
+                        document.body.style.overflow = 'hidden';
+                    }
+
+                    function closeVideoModal() {
+                        const modal = document.getElementById('video-story-modal');
+                        const video = document.getElementById('modal-video-player');
+
+                        if (!modal || !video) return;
+
+                        video.pause();
+                        video.currentTime = 0;
+                        video.src = '';
+
+                        modal.classList.remove('opacity-100');
+                        modal.classList.add('opacity-0');
+
+                        setTimeout(() => {
+                            modal.classList.remove('flex');
+                            modal.classList.add('hidden');
+                            document.body.style.overflow = '';
+                        }, 300);
+                    }
+
+                    // Keyboard navigation
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape') {
+                            closeVideoModal();
+                        }
+                    });
+                </script>
             </div>
         </section>
 
@@ -2569,7 +2768,7 @@
                         {{-- Graphic Mask Circle Background --}}
                         <div class="absolute bottom-0 right-0 w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] rounded-full translate-y-[20%] translate-x-[10%] transition-transform duration-700 hover:scale-105 overflow-hidden"
                             style="background-color: rgba(255,255,255,0.15);">
-                            <img src="{{ asset('images/image1.jpg') }}" alt="Student"
+                            <img loading="lazy" decoding="async" src="{{ asset('images/image1.jpg') }}" alt="Child participating in special education activities at GEMS CDC" width="500" height="500" loading="lazy"
                                 class="w-full h-full object-cover opacity-90 transition-all duration-700 mix-blend-overlay hover:mix-blend-normal hover:opacity-100">
                         </div>
 

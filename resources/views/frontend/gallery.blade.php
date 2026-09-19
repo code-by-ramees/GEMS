@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Gallery | GEMS')
+@section('meta_description', 'Take a look inside GEMS Child Development Centre in Kozhikode, Kerala. Browse photos of our modern therapy facilities, sensory rooms, and child milestones.')
 
 @section('content')
     {{-- ================= HERO SECTION ================= --}}
@@ -40,7 +41,7 @@
                 @foreach($galleries as $gallery)
                     <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-w-4 aspect-h-3 bg-gray-200"
                         data-aos="fade-up">
-                        <img src="{{ asset('storage/' . $gallery->image) }}"
+                        <img loading="lazy" decoding="async" src="{{ asset('storage/' . $gallery->image) }}"
                             class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                             alt="{{ $gallery->title }}">
 

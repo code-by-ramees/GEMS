@@ -17,7 +17,41 @@ Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/career', [PageController::class, 'career'])->name('career');
 Route::get('/team', [PageController::class, 'team'])->name('team');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/terms', [PageController::class, 'terms'])->name('terms');
+Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy');
 Route::post('/contact', [PageController::class, 'storeContact'])->name('contact.store');
+
+// SEO Sitemap
+Route::get('/sitemap.xml', function () {
+    $urls = [
+        ['loc' => url('/'), 'lastmod' => now()->toDateString(), 'changefreq' => 'weekly', 'priority' => '1.0'],
+        ['loc' => url('/services'), 'lastmod' => now()->toDateString(), 'changefreq' => 'weekly', 'priority' => '0.9'],
+        ['loc' => url('/about'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => url('/contact'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => url('/training'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => url('/blog'), 'lastmod' => now()->toDateString(), 'changefreq' => 'weekly', 'priority' => '0.8'],
+        ['loc' => url('/team'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.7'],
+        ['loc' => url('/gallery'), 'lastmod' => now()->toDateString(), 'changefreq' => 'weekly', 'priority' => '0.7'],
+        ['loc' => url('/career'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.6'],
+        ['loc' => url('/terms'), 'lastmod' => now()->toDateString(), 'changefreq' => 'yearly', 'priority' => '0.5'],
+        ['loc' => url('/privacy-policy'), 'lastmod' => now()->toDateString(), 'changefreq' => 'yearly', 'priority' => '0.5'],
+        ];
+
+    return response()->view('sitemap', compact('urls'))
+        ->header('Content-Type', 'text/xml');
+})->name('sitemap');
+
+// SEO Robots.txt
+Route::get('/robots.txt', function () {
+    $robots = "User-agent: *\n"
+        . "Allow: /\n"
+        . "Disallow: /admin/\n"
+        . "Disallow: /login\n\n"
+        . "Sitemap: " . url('/sitemap.xml') . "\n";
+
+    return response($robots, 200)
+        ->header('Content-Type', 'text/plain');
+})->name('robots');
 
 // Authentication Routes
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

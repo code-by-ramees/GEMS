@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Training Programs | GEMS')
+@section('meta_description', 'Empower your skills with GEMS training programs in Kozhikode, Kerala: comprehensive courses for parents, educators, and shadow teachers in child development.')
 
 @section('content')
 
@@ -51,7 +52,7 @@
             {{-- Category 1: Parents --}}
             <div class="group bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden flex flex-col transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-gray-100" data-aos="fade-up">
                 <div class="relative h-56 overflow-hidden">
-                    <img src="{{ asset('images/image1.jpg') }}" alt="Parent Training" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <img loading="lazy" decoding="async" src="{{ asset('images/image1.jpg') }}" alt="Parent Training" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 text-white">
                         <span class="px-3 py-1 bg-[#32A8B8] rounded-full text-xs font-bold uppercase tracking-wider">Parents & Families</span>
@@ -82,7 +83,7 @@
             {{-- Category 2: Teachers --}}
             <div class="group bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden flex flex-col transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-gray-100" data-aos="fade-up" data-aos-delay="100">
                 <div class="relative h-56 overflow-hidden">
-                    <img src="{{ asset('images/image4.jpg') }}" alt="Teacher Training" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <img loading="lazy" decoding="async" src="{{ asset('images/image4.jpg') }}" alt="Teacher Training" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 text-white">
                         <span class="px-3 py-1 bg-[#EA6F71] rounded-full text-xs font-bold uppercase tracking-wider">Educators</span>
@@ -113,7 +114,7 @@
             {{-- Category 3: Students/Shadow --}}
             <div class="group bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.06)] overflow-hidden flex flex-col transform transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-gray-100" data-aos="fade-up" data-aos-delay="200">
                 <div class="relative h-56 overflow-hidden">
-                    <img src="{{ asset('images/image12.jpg') }}" alt="Professional Training" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                    <img loading="lazy" decoding="async" src="{{ asset('images/image12.jpg') }}" alt="Professional Training" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 text-white">
                         <span class="px-3 py-1 bg-[#97B41A] rounded-full text-xs font-bold uppercase tracking-wider">Professionals</span>
@@ -228,7 +229,7 @@
                     <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full"></div>
                     <div>
                         <span class="text-sm font-bold uppercase tracking-widest text-rose-100 block mb-2">Join Us</span>
-                        <h3 class="text-2xl sm:text-3xl font-extrabold mb-4" style="font-family: 'Fredoka', sans-serif;">Request Admission</h3>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold mb-4" style="font-family: 'Fredoka', sans-serif;">Request Admission</h2>
                         <p class="text-rose-50/95 text-sm leading-relaxed mb-6 font-medium">
                             Ready to upskill or seek help? Fill out this quick inquiry, and let’s start.
                         </p>

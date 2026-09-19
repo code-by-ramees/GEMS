@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Contact Us | GEMS')
+@section('meta_description', 'Get in touch with GEMS Child Development Centre in Kozhikode, Kerala. Book a consultation, visit our clinic, or speak directly with our pediatric care team.')
 
 @section('content')
     {{-- ================= HERO SECTION ================= --}}
@@ -43,7 +44,7 @@
                         <div
                             class="w-12 h-12 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center text-2xl mb-4">
                             📍</div>
-                        <h3 class="font-bold text-gray-900 text-lg mb-2">Visit Us</h3>
+                        <p class="font-bold text-gray-900 text-lg mb-2">Visit Us</p>
                         <p class="text-gray-600 leading-relaxed">
                             GEMS Child Development Centre<br>
                             Pallipatu Ayyapa Temple Road
@@ -58,7 +59,7 @@
                         <div
                             class="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center text-2xl mb-4">
                             📞</div>
-                        <h3 class="font-bold text-gray-900 text-lg mb-2">Call Us</h3>
+                        <p class="font-bold text-gray-900 text-lg mb-2">Call Us</p>
                         <p class="text-gray-600 mb-3">Mon-Sat from 9am to 6pm</p>
                         <a href="tel:+917994502501" class="text-lg font-bold text-teal-600 hover:text-teal-700 block">+91
                             7994502501</a>
@@ -72,9 +73,9 @@
                         <div
                             class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-4">
                             ✉️</div>
-                        <h3 class="font-bold text-gray-900 text-lg mb-2">Email Us</h3>
+                        <p class="font-bold text-gray-900 text-lg mb-2">Email Us</p>
                         <p class="text-gray-600 mb-3">We reply within 24 hours</p>
-                        <a href="gemsrehab@gmail.com"
+                        <a href="mailto:gemsrehab@gmail.com"
                             class="text-lg font-bold text-teal-600 hover:text-teal-700">gemsrehab@gmail.com</a>
                     </div>
                 </div>
