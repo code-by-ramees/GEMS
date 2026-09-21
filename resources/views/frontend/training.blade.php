@@ -216,6 +216,26 @@
             </div>
             @endforeach
         </div>
+
+        {{-- FAQPage Structured Data (E-E-A-T) --}}
+        <script type="application/ld+json">
+        {
+          "@@context": "https://schema.org",
+          "@@type": "FAQPage",
+          "mainEntity": [
+            @foreach($faqs as $index => $faq)
+            {
+              "@@type": "Question",
+              "name": "{{ strip_tags($faq['q']) }}",
+              "acceptedAnswer": {
+                "@@type": "Answer",
+                "text": "{{ strip_tags($faq['a']) }}"
+              }
+            }{{ !$loop->last ? ',' : '' }}
+            @endforeach
+          ]
+        }
+        </script>
     </div>
 </section>
 

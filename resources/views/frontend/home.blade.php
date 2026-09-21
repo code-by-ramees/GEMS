@@ -8,8 +8,12 @@
         {{-- ================= HERO SECTION ================= --}}
         @push('head')
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-            <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap"
+            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
                 rel="stylesheet">
+            
+            {{-- LCP Image Preload --}}
+            <link rel="preload" as="image" href="{{ asset('images/image9.jpg') }}" media="(max-width: 1023px)">
+            <link rel="preload" as="image" href="{{ asset('images/image7.jpg') }}" media="(min-width: 1024px)">
             <style>
                 :root {
                     --primary-teal: #006684;
@@ -252,22 +256,25 @@
                     .hero-section {
                         background: #ffffff;
                         padding: 0 !important;
-                        min-height: 100vh;
+                        height: auto;
+                        min-height: auto;
                         position: relative;
                         overflow: hidden;
                     }
 
                     .hero-section .swiper-slide {
-                        min-height: 100vh;
+                        height: auto;
+                        min-height: auto;
                         display: flex;
                         flex-direction: column;
                         justify-content: flex-start;
-                        padding-top: 2rem;
+                        padding-top: 1rem;
+                        padding-bottom: 0.5rem;
                     }
 
                     .mobile-hero-image-container {
-                        width: 80%;
-                        max-width: 320px;
+                        width: 65%;
+                        max-width: 280px;
                         aspect-ratio: 1;
                         margin: 0 auto;
                         position: relative;
@@ -277,17 +284,13 @@
                     .mobile-organic-circle {
                         width: 100%;
                         height: 100%;
-                        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
                         overflow: hidden;
-                        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-                        border: 8px solid white;
+                        box-shadow: 0 20px 40px rgba(50, 168, 184, 0.15);
                         position: relative;
-                    }
-
-                    .mobile-organic-circle img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                        z-index: 2;
+                        animation: blobShape 8s ease-in-out infinite;
+                        background: white;
                     }
 
                     /* Circular border pattern background */
@@ -302,21 +305,22 @@
                     }
 
                     @keyframes rotate {
-                        from {
-                            transform: rotate(0deg);
-                        }
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
 
-                        to {
-                            transform: rotate(360deg);
-                        }
+                    .mobile-organic-circle img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                     }
 
                     .mobile-content-card {
-                        padding: 2.5rem 1.5rem;
+                        padding: 1.5rem 1.5rem;
                         text-align: left;
                         width: 100%;
                         background: white;
-                        margin-top: 2rem;
+                        margin-top: 0.5rem;
                         border-radius: 24px;
                         position: relative;
                         z-index: 10;
@@ -650,7 +654,7 @@
                 @media (max-width: 1023px) {
                     .swiper-pagination-hero {
                         position: relative !important;
-                        margin-top: 2rem;
+                        margin-top: 0.5rem;
                         bottom: 0 !important;
                     }
 
@@ -978,17 +982,21 @@
 
                                 {{-- CONTENT - Mobile / Desktop --}}
                                 <div class="z-20 text-center lg:text-left relative w-full lg:relative">
+                                    
+                                    {{-- Single SEO-Optimized H1 for Google (Visually Hidden) --}}
+                                    <h1 class="sr-only">GEMS Child Development Centre in Kozhikode, Kerala</h1>
+
                                     {{-- Mobile optimized layout content --}}
                                     <div class="lg:hidden flex flex-col items-center">
                                         <div class="mobile-hero-image-container">
                                             <div class="mobile-organic-circle">
-                                                <img src="{{ asset('images/image9.jpg') }}" alt="Wellness" fetchpriority="high">
+                                                <img src="{{ asset('images/image9.jpg') }}" alt="Wellness" fetchpriority="high" width="400" height="400">
                                             </div>
                                         </div>
 
                                         <div class="mobile-content-card">
-                                            <span class="mobile-subheading">Best Child Development Center In Kerala</span>
-                                            <h2 class="hero-title">About Us</h2>
+                                            <span class="mobile-subheading">Welcome to GEMS</span>
+                                            <h2 class="hero-title">Child Development Centre Kozhikode</h2>
                                             <p class="hero-description">
                                                 Our center is designed to be a safe, caring, and hopeful environment where every
                                                 child's unique potential is recognized and nurtured.
@@ -1000,11 +1008,9 @@
 
                                     {{-- Desktop layout --}}
                                     <div class="hidden lg:block">
-                                        <h1 class="hero-title text-5xl lg:text-7xl mb-8">
-                                            Precision Care for<br>
-                                            the Human<br>
-                                            Well Being
-                                        </h1>
+                                        <h2 class="hero-title text-4xl lg:text-6xl mb-8">
+                                            Child Development Centre in Kozhikode, Kerala
+                                        </h2>
 
                                         <p
                                             class="hero-description text-gray-600 text-lg lg:text-xl leading-relaxed mb-10 max-w-lg">
@@ -1021,7 +1027,7 @@
                                 <div class="organic-shape-container hidden lg:block">
                                     <div class="organic-image-mask">
                                         <img src="{{ asset('images/image7.jpg') }}" class="w-full h-full object-cover"
-                                            alt="Wellness Experience" fetchpriority="high">
+                                            alt="Wellness Experience" fetchpriority="high" width="800" height="600">
                                     </div>
                                 </div>
 
@@ -1075,13 +1081,13 @@
                                     <div class="lg:hidden flex flex-col items-center">
                                         <div class="mobile-hero-image-container">
                                             <div class="mobile-organic-circle">
-                                                <img loading="lazy" decoding="async" src="{{ asset('images/image8.jpg') }}" alt="Expert Guidance">
+                                                <img loading="lazy" decoding="async" src="{{ asset('images/image8.jpg') }}" alt="Expert Guidance" width="400" height="400">
                                             </div>
                                         </div>
 
                                         <div class="mobile-content-card">
-                                            <span class="mobile-subheading">Comprehensive Expert Guidance</span>
-                                            <h2 class="hero-title">Join Our Family</h2>
+                                            <span class="mobile-subheading">Join Over 1000 Families</span>
+                                            <h2 class="hero-title">Expert Pediatric Therapy</h2>
                                             <p class="hero-description">
                                                 Join over 1000 families who trust our certified therapists for holistic
                                                 developmental care and specialized support.
@@ -1115,7 +1121,7 @@
                                 <div class="organic-shape-container hidden lg:block">
                                     <div class="organic-image-mask">
                                         <img loading="lazy" decoding="async" src="{{ asset('images/image6.jpg') }}" class="w-full h-full object-cover"
-                                            alt="Expert Care">
+                                            alt="Expert Care" width="800" height="600">
                                     </div>
                                 </div>
 
@@ -1157,13 +1163,13 @@
                                     <div class="lg:hidden flex flex-col items-center">
                                         <div class="mobile-hero-image-container">
                                             <div class="mobile-organic-circle">
-                                                <img loading="lazy" decoding="async" src="{{ asset('images/image10.png') }}" alt="Growth Journey">
+                                                <img loading="lazy" decoding="async" src="{{ asset('images/image10.png') }}" alt="Growth Journey" width="400" height="400">
                                             </div>
                                         </div>
 
                                         <div class="mobile-content-card">
-                                            <span class="mobile-subheading">Supporting Every Step</span>
-                                            <h2 class="hero-title">Our Services</h2>
+                                            <span class="mobile-subheading">Comprehensive Care</span>
+                                            <h2 class="hero-title">Specialized Child Therapies</h2>
                                             <p class="hero-description">
                                                 From early intervention to specialized therapies, we walk alongside families at
                                                 every stage of development.
@@ -1197,7 +1203,7 @@
                                 <div class="organic-shape-container hidden lg:block">
                                     <div class="organic-image-mask">
                                         <img loading="lazy" decoding="async" src="{{ asset('images/image4.jpg') }}" class="w-full h-full object-cover"
-                                            alt="Child Development Care">
+                                            alt="Child Development Care" width="800" height="600">
                                     </div>
                                 </div>
 
@@ -1281,7 +1287,7 @@
                             </div>
                             <div
                                 class="relative w-24 h-24 rounded-full bg-white p-1 border border-gray-100 shadow-sm relative z-10">
-                                <img loading="lazy" decoding="async" src="{{ asset('images/Mushthaq.P.PNG') }}" width="96" height="96" loading="lazy" class="w-full h-full object-cover rounded-full"
+                                <img loading="lazy" decoding="async" src="{{ asset('images/Mushthaq.P.PNG') }}" width="96" height="96" class="w-full h-full object-cover rounded-full"
                                     alt="Mushtaq - Founder & CEO">
                             </div>
                         </div>
@@ -1491,8 +1497,7 @@
                                     style="background-color: {{ $service['bgColor'] }}; border: 1px solid rgba(0,0,0,0.03);">
                                     {{-- We apply a css filter hack or specific styled icon if needed, for now we load the SVG and
                                     let it display normally. Ideally these are single-color SVGs --}}
-                                    <img loading="lazy" decoding="async" src="{{ asset('images/icons/' . $service['icon']) }}" alt="{{ $service['title'] }}"
-                                        class="service-icon-img" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));">
+                                    <img loading="lazy" decoding="async" src="{{ asset('images/icons/' . $service['icon']) }}" alt="{{ $service['title'] }}" class="service-icon-img" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));" width="40" height="40">
                                 </div>
                                 <h3 class="service-card-title">{{ $service['title'] }}</h3>
                             </a>
@@ -1595,10 +1600,10 @@
                                     <div class="service-card-v2" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}"
                                         style="background-color: {{ $service['bgColor'] }}; border: 1px solid {{ $service['borderColor'] }};">
                                         <div class="card-top-image-v2">
-                                            <img loading="lazy" decoding="async" src="{{ asset($service['image']) }}" alt="{{ $service['title'] }}" width="400" height="300" loading="lazy">
+                                            <img loading="lazy" decoding="async" src="{{ asset($service['image']) }}" alt="{{ $service['title'] }}" width="400" height="300">
                                             <div class="icon-bubble-v2" style="background-color: {{ $service['color'] }}">
                                                 <img loading="lazy" decoding="async" src="{{ asset('images/icons/' . $service['icon']) }}"
-                                                    alt="{{ $service['title'] }}" width="32" height="32" loading="lazy">
+                                                    alt="{{ $service['title'] }}" width="32" height="32">
                                             </div>
                                         </div>
                                         <div class="card-body-v2">
@@ -1606,7 +1611,7 @@
                                             <p class="card-text-v2">{!! nl2br(e($service['description'])) !!}</p>
 
                                             <a href="{{ $service['link'] ?? '/services' }}" class="card-btn-v2"
-                                                style="background-color: {{ $service['color'] }}">
+                                                style="background-color: {{ $service['color'] }}" aria-label="Learn more about {{ $service['title'] }}">
                                                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                                         d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -2216,10 +2221,10 @@
                 {{-- Structured Data for Video SEO (E-E-A-T & Google Rich Snippets) --}}
                 <script type="application/ld+json">
                 {!! json_encode([
-                    '@context' => 'https://schema.org',
-                    '@graph' => [
+                    '@'.'context' => 'https://schema.org',
+                    '@'.'graph' => [
                         [
-                            '@type' => 'VideoObject',
+                            '@'.'type' => 'VideoObject',
                             'name' => 'Parent Story: Remarkable Progress at GEMS Child Development Centre',
                             'description' => 'Mother of a 4-year-old boy shares her experience with pediatric therapy at GEMS Kozhikode, seeing notable improvements in speech, hyperactivity, and eye contact.',
                             'thumbnailUrl' => asset('images/video-story-thumb-1.webp'),
@@ -2341,7 +2346,7 @@
                         <p class="text-[15px] text-[#5f6368] mb-5 font-medium" style="font-family: Arial, sans-serif;">Based on
                             <span class="font-bold text-[#202124]">72 reviews</span>
                         </p>
-                        <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width="100" height="32" loading="lazy"
+                        <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width="100" height="32"
                             class="h-8">
                     </div>
 
@@ -2381,7 +2386,7 @@
                                         </div>
                                     </div>
                                     <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
+                                        alt="Google" width="20" height="20" class="w-5 h-5 mt-1">
                                 </div>
                                 <div class="flex items-center gap-1 mb-3">
                                     <div class="flex gap-0.5">
@@ -2422,7 +2427,7 @@
                                         </div>
                                     </div>
                                     <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
+                                        alt="Google" width="20" height="20" class="w-5 h-5 mt-1">
                                 </div>
                                 <div class="flex items-center gap-1 mb-3">
                                     <div class="flex gap-0.5">
@@ -2463,7 +2468,7 @@
                                         </div>
                                     </div>
                                     <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
+                                        alt="Google" width="20" height="20" class="w-5 h-5 mt-1">
                                 </div>
                                 <div class="flex items-center gap-1 mb-3">
                                     <div class="flex gap-0.5">
@@ -2503,7 +2508,7 @@
                                         </div>
                                     </div>
                                     <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
+                                        alt="Google" width="20" height="20" class="w-5 h-5 mt-1">
                                 </div>
                                 <div class="flex items-center gap-1 mb-3">
                                     <div class="flex gap-0.5">
@@ -2725,6 +2730,36 @@
                     </details>
                 </div>
             </div>
+
+            {{-- FAQPage Structured Data (E-E-A-T) --}}
+            <script type="application/ld+json">
+            {
+              "@@context": "https://schema.org",
+              "@@type": "FAQPage",
+              "mainEntity": [{
+                "@@type": "Question",
+                "name": "How do I know if my child needs therapy?",
+                "acceptedAnswer": {
+                  "@@type": "Answer",
+                  "text": "If you notice delays in speech, motor skills, social interaction, or behavior compared to other children of the same age, it's best to consult a professional. Early intervention yields the best results."
+                }
+              }, {
+                "@@type": "Question",
+                "name": "Do you offer online consultations?",
+                "acceptedAnswer": {
+                  "@@type": "Answer",
+                  "text": "Yes, we offer tele-therapy and online parent counseling sessions for families who cannot visit our center physically."
+                }
+              }, {
+                "@@type": "Question",
+                "name": "What ages do you treat?",
+                "acceptedAnswer": {
+                  "@@type": "Answer",
+                  "text": "We work with children from infancy (Early Intervention) up to adolescence (18 years), providing age-appropriate therapies and support."
+                }
+              }]
+            }
+            </script>
         </section>
 
         {{-- ================= FINAL CTA ================= --}}
@@ -2768,7 +2803,7 @@
                         {{-- Graphic Mask Circle Background --}}
                         <div class="absolute bottom-0 right-0 w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] rounded-full translate-y-[20%] translate-x-[10%] transition-transform duration-700 hover:scale-105 overflow-hidden"
                             style="background-color: rgba(255,255,255,0.15);">
-                            <img loading="lazy" decoding="async" src="{{ asset('images/image1.jpg') }}" alt="Child participating in special education activities at GEMS CDC" width="500" height="500" loading="lazy"
+                            <img loading="lazy" decoding="async" src="{{ asset('images/image1.jpg') }}" alt="Child participating in special education activities at GEMS CDC" width="500" height="500"
                                 class="w-full h-full object-cover opacity-90 transition-all duration-700 mix-blend-overlay hover:mix-blend-normal hover:opacity-100">
                         </div>
 
@@ -2794,3 +2829,5 @@
             </div>
         </section>
 @endsection
+
+

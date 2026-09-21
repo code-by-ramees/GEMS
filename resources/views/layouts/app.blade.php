@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -10,16 +10,17 @@
 
     {{-- SEO Meta Tags --}}
     <meta name="description"
-        content="@yield('meta_description', 'GEMS Child Development Centre – Kerala\'s premier center for child development therapies, special education, and holistic care. 10+ years of experience helping children thrive.')">
+        content="@yield('meta_description', 'GEMS Child Development Centre in Kozhikode, Kerala offers expert pediatric therapies, autism support, speech & occupational therapy. Empowering children.')">
     <meta name="keywords"
-        content="child development, autism therapy, speech therapy, occupational therapy, special education, Kerala, Kochi">
+        content="child development centre kozhikode, autism therapy calicut, speech therapy, occupational therapy, special education, pediatric therapy kerala, GEMS CDC">
     <meta name="author" content="GEMS Child Development Centre">
+    <meta name="robots" content="@yield('robots', 'index, follow')">
     <link rel="canonical" href="@yield('canonical', url()->current())">
 
     {{-- Open Graph --}}
-    <meta property="og:title" content="@yield('og_title', 'GEMS | Best Child Development Centre in Kerala')">
+    <meta property="og:title" content="@yield('title', 'GEMS Child Development Centre | Kozhikode, Kerala')">
     <meta property="og:description"
-        content="@yield('og_description', 'Comprehensive child development therapies and special education programs in Kerala.')">
+        content="@yield('meta_description', 'GEMS Child Development Centre in Kozhikode, Kerala offers expert pediatric therapies, autism support, speech & occupational therapy. Empowering children.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="@yield('og_image', asset('images/og-image.jpg'))">
@@ -27,8 +28,9 @@
 
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('title', 'GEMS | Best Child Development Centre in Kerala')">
-    <meta name="twitter:description" content="Kerala's premier child development center with 10+ years of experience.">
+    <meta name="twitter:title" content="@yield('title', 'GEMS Child Development Centre | Kozhikode, Kerala')">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/og-image.jpg'))">
+    <meta name="twitter:description" content="@yield('meta_description', 'GEMS Child Development Centre in Kozhikode, Kerala offers expert pediatric therapies, autism support, speech & occupational therapy. Empowering children.')">
 
     {{-- Structured Data (Schema.org / Google Rich Results) --}}
     <script type="application/ld+json">
@@ -46,6 +48,11 @@
       "email": "gemsrehab@gmail.com",
       "priceRange": "$$",
       "isAcceptingNewPatients": "True",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "72"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Pallipatu Ayyapa Temple Road, Civil Station",
@@ -273,14 +280,14 @@
     </a>
 
     {{-- Progress bar --}}
-    <div class="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#32A8B8] to-[#EA6F71] z-50 transform origin-left scale-x-0 transition-transform duration-300"
+    <div class="fixed top-0 left-0 w-full h-1 bg-gradient-to-r from-[#32A8B8] to-[#EA6F71] z-[70] transform origin-left scale-x-0 transition-transform duration-300"
         id="progress-bar"></div>
 
     {{-- NAVBAR --}}
     @include('partials.navbar')
 
     {{-- PAGE CONTENT --}}
-    <main id="main-content" class="overflow-x-hidden min-h-screen">
+    <main id="main-content" class="pt-16 lg:pt-20 overflow-x-hidden min-h-screen">
         @yield('content')
     </main>
 
@@ -345,13 +352,14 @@
 
         // DOM ready
         document.addEventListener('DOMContentLoaded', function () {
-            // Hide loading overlay
-            setTimeout(() => {
-                document.getElementById('loading-overlay').style.opacity = '0';
+            // Hide loading overlay instantly
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) {
+                overlay.style.opacity = '0';
                 setTimeout(() => {
-                    document.getElementById('loading-overlay').style.display = 'none';
+                    overlay.style.display = 'none';
                 }, 300);
-            }, 800);
+            }
 
             // Scroll progress bar
             const progressBar = document.getElementById('progress-bar');
@@ -498,3 +506,4 @@
 </body>
 
 </html>
+

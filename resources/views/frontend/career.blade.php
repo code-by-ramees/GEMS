@@ -102,7 +102,7 @@
                                 <span class="flex items-center gap-1">💼 3+ Years Exp</span>
                             </div>
                         </div>
-                        <a href="mailto:careers@aimscdc.com?subject=Application for Senior Speech Therapist"
+                        <a href="mailto:careeratgemscdc@gmail.com?subject=Application for Senior Speech Therapist"
                             class="inline-flex items-center justify-center bg-[#32A8B8] hover:bg-[#288a99] text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">
                             Apply Now
                         </a>
@@ -121,7 +121,7 @@
                                 <span class="flex items-center gap-1">💼 1-3 Years Exp</span>
                             </div>
                         </div>
-                        <a href="mailto:careers@aimscdc.com?subject=Application for Occupational Therapist"
+                        <a href="mailto:careeratgemscdc@gmail.com?subject=Application for Occupational Therapist"
                             class="inline-flex items-center justify-center bg-[#EA6F71] hover:bg-[#d45d5f] text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">
                             Apply Now
                         </a>
@@ -140,7 +140,7 @@
                                 <span class="flex items-center gap-1">💼 Fresher / Experienced</span>
                             </div>
                         </div>
-                        <a href="mailto:careers@aimscdc.com?subject=Application for Special Educator"
+                        <a href="mailto:careeratgemscdc@gmail.com?subject=Application for Special Educator"
                             class="inline-flex items-center justify-center bg-[#97B41A] hover:bg-[#829916] text-white font-semibold px-6 py-2.5 rounded-lg transition-colors">
                             Apply Now
                         </a>
@@ -150,7 +150,7 @@
 
             <div class="mt-12 text-center">
                 <p class="text-gray-600 mb-4">Don't see a matching role? We are always looking for talent.</p>
-                <a href="mailto:careers@aimscdc.com" class="text-[#32A8B8] font-semibold hover:text-[#288a99]">Send your CV
+                <a href="mailto:careeratgemscdc@gmail.com" class="text-[#32A8B8] font-semibold hover:text-[#288a99]">Send your CV
                     to careeratgemscdc@gmail.com →</a>
             </div>
         </div>

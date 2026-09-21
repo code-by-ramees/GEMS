@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us | GEMS')
+@section('title', 'Contact GEMS Child Development Centre | Kozhikode, Kerala')
 @section('meta_description', 'Get in touch with GEMS Child Development Centre in Kozhikode, Kerala. Book a consultation, visit our clinic, or speak directly with our pediatric care team.')
 
 @section('content')
@@ -44,13 +44,17 @@
                         <div
                             class="w-12 h-12 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center text-2xl mb-4">
                             📍</div>
-                        <p class="font-bold text-gray-900 text-lg mb-2">Visit Us</p>
-                        <p class="text-gray-600 leading-relaxed">
+                        <h3 class="font-bold text-gray-900 text-lg mb-2">Visit Us</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
                             GEMS Child Development Centre<br>
-                            Pallipatu Ayyapa Temple Road
-                            Civil Station,<br>
-                            Kozhikode, Kerala, India - 673020
+                            Pallipatu Ayyapa Temple Road<br>
+                            Civil Station, Kozhikode,<br>
+                            Kerala, India - 673020
                         </p>
+                        <a href="https://maps.app.goo.gl/toEZPXabEoD6HJSi6" target="_blank"
+                            class="text-teal-600 font-semibold hover:text-teal-700 flex items-center gap-1 transition-colors">
+                            Get Directions →
+                        </a>
                     </div>
 
                     {{-- Phone --}}
@@ -59,7 +63,7 @@
                         <div
                             class="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center text-2xl mb-4">
                             📞</div>
-                        <p class="font-bold text-gray-900 text-lg mb-2">Call Us</p>
+                        <h3 class="font-bold text-gray-900 text-lg mb-2">Call Us</h3>
                         <p class="text-gray-600 mb-3">Mon-Sat from 9am to 6pm</p>
                         <a href="tel:+917994502501" class="text-lg font-bold text-teal-600 hover:text-teal-700 block">+91
                             7994502501</a>
@@ -73,7 +77,7 @@
                         <div
                             class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-4">
                             ✉️</div>
-                        <p class="font-bold text-gray-900 text-lg mb-2">Email Us</p>
+                        <h3 class="font-bold text-gray-900 text-lg mb-2">Email Us</h3>
                         <p class="text-gray-600 mb-3">We reply within 24 hours</p>
                         <a href="mailto:gemsrehab@gmail.com"
                             class="text-lg font-bold text-teal-600 hover:text-teal-700">gemsrehab@gmail.com</a>
@@ -167,7 +171,7 @@
 
     {{-- ================= MAP SECTION ================= --}}
     <section class="h-[400px] w-full bg-gray-200 relative">
-        <iframe
+        <iframe title="GEMS Child Development Centre Location Map"
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3912.643596121176!2d75.79063037504932!3d11.28758808889399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDE3JzE1LjMiTiA3NcKwNDcnMzUuNSJF!5e0!3m2!1sen!2sin!4v1767009982802!5m2!1sen!2sin"
             width="100%" height="100%" class="border-0 filter grayscale hover:grayscale-0 transition-all duration-500"
             allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">

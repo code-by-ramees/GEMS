@@ -253,4 +253,31 @@
     </div>
 </section>
 
+
+    {{-- MedicalWebPage Structured Data (YMYL E-E-A-T) --}}
+    @push('head')
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "MedicalWebPage",
+      "name": "Pediatric Therapy Services at GEMS CDC",
+      "description": "Comprehensive, evidence-based therapies including Speech Therapy, Occupational Therapy, Behavioral Therapy, and Special Education.",
+      "url": "{{ url()->current() }}",
+      "lastReviewed": "2024-01-01",
+      "reviewedBy": {
+        "@@type": "Person",
+        "name": "Narmada Soman",
+        "jobTitle": "Consultant Psychologist",
+        "worksFor": { "@@type": "MedicalOrganization", "name": "GEMS Child Development Centre" }
+      },
+      "about": [
+        { "@@type": "MedicalTherapy", "name": "Speech Therapy" },
+        { "@@type": "MedicalTherapy", "name": "Occupational Therapy" },
+        { "@@type": "MedicalTherapy", "name": "Behavioral Therapy" },
+        { "@@type": "MedicalTherapy", "name": "Special Education" }
+      ]
+    }
+    </script>
+    @endpush
 @endsection
+

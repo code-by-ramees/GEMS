@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Redirect non-www to www
+    RewriteCond %{HTTP_HOST} ^gemscdc\.in$ [NC]
+    RewriteRule ^(.*)$ https://www.gemscdc.in/$1 [L,R=301]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
