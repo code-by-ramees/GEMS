@@ -24,17 +24,17 @@ Route::post('/contact', [PageController::class, 'storeContact'])->name('contact.
 // SEO Sitemap
 Route::get('/sitemap.xml', function () {
     $urls = [
-        ['loc' => url('/'), 'lastmod' => now()->toDateString(), 'changefreq' => 'weekly', 'priority' => '1.0'],
-        ['loc' => url('/services'), 'lastmod' => now()->toDateString(), 'changefreq' => 'weekly', 'priority' => '0.9'],
-        ['loc' => url('/about'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.8'],
-        ['loc' => url('/contact'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.8'],
-        ['loc' => url('/training'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.8'],
-        ['loc' => url('/blog'), 'lastmod' => now()->toDateString(), 'changefreq' => 'weekly', 'priority' => '0.8'],
-        ['loc' => url('/team'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.7'],
-        ['loc' => url('/gallery'), 'lastmod' => now()->toDateString(), 'changefreq' => 'weekly', 'priority' => '0.7'],
-        ['loc' => url('/career'), 'lastmod' => now()->toDateString(), 'changefreq' => 'monthly', 'priority' => '0.6'],
-        ['loc' => url('/terms'), 'lastmod' => now()->toDateString(), 'changefreq' => 'yearly', 'priority' => '0.5'],
-        ['loc' => url('/privacy-policy'), 'lastmod' => now()->toDateString(), 'changefreq' => 'yearly', 'priority' => '0.5'],
+        ['loc' => url('/'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'weekly', 'priority' => '1.0'],
+        ['loc' => url('/services'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'weekly', 'priority' => '0.9'],
+        ['loc' => url('/about'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => url('/contact'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => url('/training'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'monthly', 'priority' => '0.8'],
+        ['loc' => url('/blog'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'weekly', 'priority' => '0.8'],
+        ['loc' => url('/team'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'monthly', 'priority' => '0.7'],
+        ['loc' => url('/gallery'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'weekly', 'priority' => '0.7'],
+        ['loc' => url('/career'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'monthly', 'priority' => '0.6'],
+        ['loc' => url('/terms'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'yearly', 'priority' => '0.5'],
+        ['loc' => url('/privacy-policy'), 'lastmod' => date('Y-m-d', filemtime(resource_path('views/frontend/home.blade.php'))), 'changefreq' => 'yearly', 'priority' => '0.5'],
         ];
 
     return response()->view('sitemap', compact('urls'))
@@ -67,6 +67,8 @@ Route::middleware(['auth', \App\Http\Middleware\AdminMiddleware::class])->prefix
     Route::get('/contacts', [\App\Http\Controllers\Admin\AdminContactController::class, 'index'])->name('contacts.index');
     Route::get('/contacts/{contact}', [\App\Http\Controllers\Admin\AdminContactController::class, 'show'])->name('contacts.show');
     Route::delete('/contacts/{contact}', [\App\Http\Controllers\Admin\AdminContactController::class, 'destroy'])->name('contacts.destroy');
+
+    Route::resource('reviews', \App\Http\Controllers\Admin\ReviewController::class)->except(['show']);
 });
 // ADMIN
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blog | GEMS')
+@section('title', 'Child Health & Development Blog | GEMS CDC Kozhikode')
 @section('meta_description', 'Read expert insights on child development, parenting tips, speech milestones, and sensory wellness from the therapeutic specialists at GEMS Kozhikode, Kerala.')
 
 @section('content')
@@ -170,4 +170,19 @@
             </div>
         </div>
     </section>
+
+    {-- Breadcrumb Schema --}
+    @push('head')
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ url('/blog') }}" }
+      ]
+    }
+    </script>
+    @endpush
+
 @endsection

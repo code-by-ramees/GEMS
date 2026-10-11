@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Gallery; 
+use App\Models\Gallery;
+use App\Models\Review;
 
 class PageController extends Controller
 {
     public function home()
     {
-        return view('frontend.home');
+        $reviews = Review::active()->ordered()->get();
+        return view('frontend.home', compact('reviews'));
     }
 
     public function about()

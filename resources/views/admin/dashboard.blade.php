@@ -60,6 +60,25 @@
                 </a>
             </div>
 
+            {{-- GOOGLE REVIEWS --}}
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-4">
+                    ⭐
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Google Reviews</h3>
+                <p class="text-gray-600 mb-4">
+                    Manage reviews displayed on the homepage.
+                </p>
+                <a href="{{ route('admin.reviews.index') }}"
+                   class="text-amber-600 font-semibold hover:text-amber-700 inline-flex items-center">
+                    Manage Reviews
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
             {{-- USERS (COMING SOON) --}}
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 opacity-60">
                 <div class="w-12 h-12 bg-gray-100 text-gray-400 rounded-xl flex items-center justify-center text-2xl mb-4">

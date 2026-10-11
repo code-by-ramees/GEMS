@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Gallery | GEMS')
+@section('title', 'Our Facility & Therapy Center Gallery | GEMS CDC Kozhikode')
 @section('meta_description', 'Take a look inside GEMS Child Development Centre in Kozhikode, Kerala. Browse photos of our modern therapy facilities, sensory rooms, and child milestones.')
 
 @section('content')
@@ -57,5 +57,20 @@
 
         </div>
     </section>
+
+
+    {-- Breadcrumb Schema --}
+    @push('head')
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+        { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "{{ url('/gallery') }}" }
+      ]
+    }
+    </script>
+    @endpush
 
 @endsection

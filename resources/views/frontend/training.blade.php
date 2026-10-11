@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Training Programs | GEMS')
+@section('title', 'Child Development & Parent Training Programs | GEMS Kozhikode')
 @section('meta_description', 'Empower your skills with GEMS training programs in Kozhikode, Kerala: comprehensive courses for parents, educators, and shadow teachers in child development.')
 
 @section('content')
@@ -216,6 +216,26 @@
             </div>
             @endforeach
         </div>
+
+        {{-- FAQPage Structured Data (E-E-A-T) --}}
+        <script type="application/ld+json">
+        {
+          "@@context": "https://schema.org",
+          "@@type": "FAQPage",
+          "mainEntity": [
+            @foreach($faqs as $index => $faq)
+            {
+              "@@type": "Question",
+              "name": "{{ strip_tags($faq['q']) }}",
+              "acceptedAnswer": {
+                "@@type": "Answer",
+                "text": "{{ strip_tags($faq['a']) }}"
+              }
+            }{{ !$loop->last ? ',' : '' }}
+            @endforeach
+          ]
+        }
+        </script>
     </div>
 </section>
 
@@ -317,6 +337,21 @@
         </div>
     </div>
 </section>
+
+
+    {-- Breadcrumb Schema --}
+    @push('head')
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+        { "@type": "ListItem", "position": 2, "name": "Training Programs", "item": "{{ url('/training') }}" }
+      ]
+    }
+    </script>
+    @endpush
 
 @endsection
 

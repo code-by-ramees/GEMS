@@ -8,8 +8,12 @@
         {{-- ================= HERO SECTION ================= --}}
         @push('head')
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-            <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap"
+            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
                 rel="stylesheet">
+            
+            {{-- LCP Image Preload --}}
+            <link rel="preload" as="image" href="{{ asset('images/image9.jpg') }}" media="(max-width: 1023px)">
+            <link rel="preload" as="image" href="{{ asset('images/image7.jpg') }}" media="(min-width: 1024px)">
             <style>
                 :root {
                     --primary-teal: #006684;
@@ -252,22 +256,25 @@
                     .hero-section {
                         background: #ffffff;
                         padding: 0 !important;
-                        min-height: 100vh;
+                        height: auto;
+                        min-height: auto;
                         position: relative;
                         overflow: hidden;
                     }
 
                     .hero-section .swiper-slide {
-                        min-height: 100vh;
+                        height: auto;
+                        min-height: auto;
                         display: flex;
                         flex-direction: column;
                         justify-content: flex-start;
-                        padding-top: 2rem;
+                        padding-top: 1rem;
+                        padding-bottom: 0.5rem;
                     }
 
                     .mobile-hero-image-container {
-                        width: 80%;
-                        max-width: 320px;
+                        width: 65%;
+                        max-width: 280px;
                         aspect-ratio: 1;
                         margin: 0 auto;
                         position: relative;
@@ -277,17 +284,13 @@
                     .mobile-organic-circle {
                         width: 100%;
                         height: 100%;
-                        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
                         overflow: hidden;
-                        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-                        border: 8px solid white;
+                        box-shadow: 0 20px 40px rgba(50, 168, 184, 0.15);
                         position: relative;
-                    }
-
-                    .mobile-organic-circle img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                        z-index: 2;
+                        animation: blobShape 8s ease-in-out infinite;
+                        background: white;
                     }
 
                     /* Circular border pattern background */
@@ -302,21 +305,22 @@
                     }
 
                     @keyframes rotate {
-                        from {
-                            transform: rotate(0deg);
-                        }
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
 
-                        to {
-                            transform: rotate(360deg);
-                        }
+                    .mobile-organic-circle img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                     }
 
                     .mobile-content-card {
-                        padding: 2.5rem 1.5rem;
+                        padding: 1.5rem 1.5rem;
                         text-align: left;
                         width: 100%;
                         background: white;
-                        margin-top: 2rem;
+                        margin-top: 0.5rem;
                         border-radius: 24px;
                         position: relative;
                         z-index: 10;
@@ -650,7 +654,7 @@
                 @media (max-width: 1023px) {
                     .swiper-pagination-hero {
                         position: relative !important;
-                        margin-top: 2rem;
+                        margin-top: 0.5rem;
                         bottom: 0 !important;
                     }
 
@@ -978,17 +982,21 @@
 
                                 {{-- CONTENT - Mobile / Desktop --}}
                                 <div class="z-20 text-center lg:text-left relative w-full lg:relative">
+                                    
+                                    {{-- Single SEO-Optimized H1 for Google (Visually Hidden) --}}
+                                    
+
                                     {{-- Mobile optimized layout content --}}
                                     <div class="lg:hidden flex flex-col items-center">
                                         <div class="mobile-hero-image-container">
                                             <div class="mobile-organic-circle">
-                                                <img src="{{ asset('images/image9.jpg') }}" alt="Wellness" fetchpriority="high">
+                                                <img src="{{ asset('images/image9.jpg') }}" alt="Wellness" fetchpriority="high" width="400" height="400">
                                             </div>
                                         </div>
 
                                         <div class="mobile-content-card">
-                                            <span class="mobile-subheading">Best Child Development Center In Kerala</span>
-                                            <h2 class="hero-title">About Us</h2>
+                                            <span class="mobile-subheading">Welcome to GEMS</span>
+                                            <h1 class="hero-title">Child Development Centre Kozhikode</h1>
                                             <p class="hero-description">
                                                 Our center is designed to be a safe, caring, and hopeful environment where every
                                                 child's unique potential is recognized and nurtured.
@@ -1000,10 +1008,8 @@
 
                                     {{-- Desktop layout --}}
                                     <div class="hidden lg:block">
-                                        <h1 class="hero-title text-5xl lg:text-7xl mb-8">
-                                            Precision Care for<br>
-                                            the Human<br>
-                                            Well Being
+                                        <h1 class="hero-title text-4xl lg:text-6xl mb-8">
+                                            Child Development Centre in Kozhikode, Kerala
                                         </h1>
 
                                         <p
@@ -1021,7 +1027,7 @@
                                 <div class="organic-shape-container hidden lg:block">
                                     <div class="organic-image-mask">
                                         <img src="{{ asset('images/image7.jpg') }}" class="w-full h-full object-cover"
-                                            alt="Wellness Experience" fetchpriority="high">
+                                            alt="Wellness Experience" fetchpriority="high" width="800" height="600">
                                     </div>
                                 </div>
 
@@ -1075,13 +1081,13 @@
                                     <div class="lg:hidden flex flex-col items-center">
                                         <div class="mobile-hero-image-container">
                                             <div class="mobile-organic-circle">
-                                                <img loading="lazy" decoding="async" src="{{ asset('images/image8.jpg') }}" alt="Expert Guidance">
+                                                <img loading="lazy" decoding="async" src="{{ asset('images/image8.jpg') }}" alt="Expert Guidance" width="400" height="400">
                                             </div>
                                         </div>
 
                                         <div class="mobile-content-card">
-                                            <span class="mobile-subheading">Comprehensive Expert Guidance</span>
-                                            <h2 class="hero-title">Join Our Family</h2>
+                                            <span class="mobile-subheading">Join Over 1000 Families</span>
+                                            <h2 class="hero-title">Expert Pediatric Therapy</h2>
                                             <p class="hero-description">
                                                 Join over 1000 families who trust our certified therapists for holistic
                                                 developmental care and specialized support.
@@ -1115,7 +1121,7 @@
                                 <div class="organic-shape-container hidden lg:block">
                                     <div class="organic-image-mask">
                                         <img loading="lazy" decoding="async" src="{{ asset('images/image6.jpg') }}" class="w-full h-full object-cover"
-                                            alt="Expert Care">
+                                            alt="Expert Care" width="800" height="600">
                                     </div>
                                 </div>
 
@@ -1157,13 +1163,13 @@
                                     <div class="lg:hidden flex flex-col items-center">
                                         <div class="mobile-hero-image-container">
                                             <div class="mobile-organic-circle">
-                                                <img loading="lazy" decoding="async" src="{{ asset('images/image10.png') }}" alt="Growth Journey">
+                                                <img loading="lazy" decoding="async" src="{{ asset('images/image10.png') }}" alt="Growth Journey" width="400" height="400">
                                             </div>
                                         </div>
 
                                         <div class="mobile-content-card">
-                                            <span class="mobile-subheading">Supporting Every Step</span>
-                                            <h2 class="hero-title">Our Services</h2>
+                                            <span class="mobile-subheading">Comprehensive Care</span>
+                                            <h2 class="hero-title">Specialized Child Therapies</h2>
                                             <p class="hero-description">
                                                 From early intervention to specialized therapies, we walk alongside families at
                                                 every stage of development.
@@ -1197,7 +1203,7 @@
                                 <div class="organic-shape-container hidden lg:block">
                                     <div class="organic-image-mask">
                                         <img loading="lazy" decoding="async" src="{{ asset('images/image4.jpg') }}" class="w-full h-full object-cover"
-                                            alt="Child Development Care">
+                                            alt="Child Development Care" width="800" height="600">
                                     </div>
                                 </div>
 
@@ -1281,7 +1287,7 @@
                             </div>
                             <div
                                 class="relative w-24 h-24 rounded-full bg-white p-1 border border-gray-100 shadow-sm relative z-10">
-                                <img loading="lazy" decoding="async" src="{{ asset('images/Mushthaq.P.PNG') }}" width="96" height="96" loading="lazy" class="w-full h-full object-cover rounded-full"
+                                <img loading="lazy" decoding="async" src="{{ asset('images/Mushthaq.P.PNG') }}" width="96" height="96" class="w-full h-full object-cover rounded-full"
                                     alt="Mushtaq - Founder & CEO">
                             </div>
                         </div>
@@ -1491,8 +1497,7 @@
                                     style="background-color: {{ $service['bgColor'] }}; border: 1px solid rgba(0,0,0,0.03);">
                                     {{-- We apply a css filter hack or specific styled icon if needed, for now we load the SVG and
                                     let it display normally. Ideally these are single-color SVGs --}}
-                                    <img loading="lazy" decoding="async" src="{{ asset('images/icons/' . $service['icon']) }}" alt="{{ $service['title'] }}"
-                                        class="service-icon-img" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));">
+                                    <img loading="lazy" decoding="async" src="{{ asset('images/icons/' . $service['icon']) }}" alt="{{ $service['title'] }}" class="service-icon-img" style="filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));" width="40" height="40">
                                 </div>
                                 <h3 class="service-card-title">{{ $service['title'] }}</h3>
                             </a>
@@ -1595,10 +1600,10 @@
                                     <div class="service-card-v2" data-aos="fade-up" data-aos-delay="{{ ($index + 1) * 100 }}"
                                         style="background-color: {{ $service['bgColor'] }}; border: 1px solid {{ $service['borderColor'] }};">
                                         <div class="card-top-image-v2">
-                                            <img loading="lazy" decoding="async" src="{{ asset($service['image']) }}" alt="{{ $service['title'] }}" width="400" height="300" loading="lazy">
+                                            <img loading="lazy" decoding="async" src="{{ asset($service['image']) }}" alt="{{ $service['title'] }}" width="400" height="300">
                                             <div class="icon-bubble-v2" style="background-color: {{ $service['color'] }}">
                                                 <img loading="lazy" decoding="async" src="{{ asset('images/icons/' . $service['icon']) }}"
-                                                    alt="{{ $service['title'] }}" width="32" height="32" loading="lazy">
+                                                    alt="{{ $service['title'] }}" width="32" height="32">
                                             </div>
                                         </div>
                                         <div class="card-body-v2">
@@ -1606,7 +1611,7 @@
                                             <p class="card-text-v2">{!! nl2br(e($service['description'])) !!}</p>
 
                                             <a href="{{ $service['link'] ?? '/services' }}" class="card-btn-v2"
-                                                style="background-color: {{ $service['color'] }}">
+                                                style="background-color: {{ $service['color'] }}" aria-label="Learn more about {{ $service['title'] }}">
                                                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                                         d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -2216,10 +2221,10 @@
                 {{-- Structured Data for Video SEO (E-E-A-T & Google Rich Snippets) --}}
                 <script type="application/ld+json">
                 {!! json_encode([
-                    '@context' => 'https://schema.org',
-                    '@graph' => [
+                    '@'.'context' => 'https://schema.org',
+                    '@'.'graph' => [
                         [
-                            '@type' => 'VideoObject',
+                            '@'.'type' => 'VideoObject',
                             'name' => 'Parent Story: Remarkable Progress at GEMS Child Development Centre',
                             'description' => 'Mother of a 4-year-old boy shares her experience with pediatric therapy at GEMS Kozhikode, seeing notable improvements in speech, hyperactivity, and eye contact.',
                             'thumbnailUrl' => asset('images/video-story-thumb-1.webp'),
@@ -2322,27 +2327,47 @@
                     </div>
                 </div>
 
+                @php
+                    $googleReviewsUrl = 'https://www.google.com/search?q=Gems+Child+Development+Center&kgmid=/g/11wxfgmcpv#lrd=0x3ba65fe3158412d9:0xad8f1c9ae3bb1ea,1';
+                @endphp
+
                 <!-- Google Reviews Widget Layout -->
                 <div class="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 w-full" data-aos="fade-up"
                     data-aos-delay="100">
 
                     {{-- Left: Google Summary --}}
                     <div class="flex flex-col items-center justify-center text-center w-full lg:w-1/4 shrink-0">
-                        <h3 class="text-2xl font-bold text-[#202124] tracking-wide mb-3"
+                        <h3 class="text-2xl font-bold text-[#202124] tracking-wide mb-2"
                             style="font-family: Arial, sans-serif;">EXCELLENT</h3>
-                        <div class="flex gap-1 mb-3">
-                            @for($i = 0; $i < 5; $i++)
-                                <svg viewBox="0 0 24 24" fill="#FBBC04" class="w-8 h-8">
-                                    <path
-                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                </svg>
-                            @endfor
+                        <div class="flex items-center justify-center gap-1.5 mb-2">
+                            <span class="text-2xl font-bold text-[#202124]" style="font-family: Arial, sans-serif;">4.9</span>
+                            <div class="flex gap-0.5">
+                                @for($i = 0; $i < 5; $i++)
+                                    <svg viewBox="0 0 24 24" fill="#FBBC04" class="w-6 h-6">
+                                        <path
+                                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                    </svg>
+                                @endfor
+                            </div>
                         </div>
-                        <p class="text-[15px] text-[#5f6368] mb-5 font-medium" style="font-family: Arial, sans-serif;">Based on
-                            <span class="font-bold text-[#202124]">72 reviews</span>
+                        <p class="text-[15px] text-[#5f6368] mb-4 font-medium" style="font-family: Arial, sans-serif;">Based on
+                            <a href="{{ $googleReviewsUrl }}" target="_blank" rel="noopener noreferrer" class="font-bold text-[#202124] hover:text-[#1a73e8] underline decoration-dotted">
+                                53 reviews
+                            </a>
                         </p>
-                        <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width="100" height="32" loading="lazy"
-                            class="h-8">
+                        <a href="{{ $googleReviewsUrl }}" target="_blank" rel="noopener noreferrer" class="inline-block transition-transform hover:scale-105" title="View GEMS on Google">
+                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width="100" height="32"
+                                class="h-8">
+                        </a>
+                        <a href="{{ $googleReviewsUrl }}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="mt-4 inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#1a73e8] hover:text-[#1557b0] transition-colors group">
+                            <span>Read reviews on Google</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
                     </div>
 
                     {{-- Right: Cards Carousel/Grid --}}
@@ -2366,167 +2391,95 @@
                         <div id="reviews-container"
                             class="flex overflow-x-auto gap-4 lg:gap-6 snap-x snap-mandatory pb-6 hide-scrollbar cursor-grab active:cursor-grabbing w-full scroll-smooth">
 
-                            {{-- Card 1 --}}
-                            <div
-                                class="bg-[#f8f9fa] rounded-[16px] p-6 shrink-0 w-[85%] sm:w-[320px] lg:w-[calc(100%/3-1rem)] snap-center text-left border border-gray-50 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-shadow">
-                                <div class="flex justify-between items-start mb-4">
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="w-10 h-10 rounded-full bg-[#388e3c] flex items-center justify-center text-white font-bold text-lg">
-                                            H</div>
-                                        <div>
-                                            <div class="font-bold text-[#202124] text-[15px] leading-tight font-sans">Hasna Kp
+                            @php $avatarColors = ['#388e3c', '#1976d2', '#fbc02d', '#d32f2f', '#7b1fa2']; @endphp
+
+                            @if($reviews->count() > 0)
+                                @foreach($reviews as $index => $review)
+                                <div
+                                    class="bg-[#f8f9fa] rounded-[16px] p-6 shrink-0 w-[85%] sm:w-[320px] lg:w-[calc(100%/3-1rem)] snap-center text-left border border-gray-50 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-shadow">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                                                style="background-color: {{ $avatarColors[$index % count($avatarColors)] }}">
+                                                {{ $review->initial }}</div>
+                                            <div>
+                                                <div class="font-bold text-[#202124] text-[15px] leading-tight font-sans">{{ $review->reviewer_name }}</div>
+                                                <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">{{ $review->review_date->format('Y-m-d') }}</div>
                                             </div>
-                                            <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">2024-08-12</div>
                                         </div>
+                                        <a href="{{ $googleReviewsUrl }}" target="_blank" rel="noopener noreferrer" title="View on Google" class="transition-transform hover:scale-110">
+                                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                                alt="Google" width="20" height="20" class="w-5 h-5 mt-1">
+                                        </a>
                                     </div>
-                                    <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
-                                </div>
-                                <div class="flex items-center gap-1 mb-3">
-                                    <div class="flex gap-0.5">
-                                        @for($i = 0; $i < 5; $i++)
-                                            <svg viewBox="0 0 24 24" fill="#FBBC04" class="w-4 h-4">
-                                                <path
-                                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                            </svg>
-                                        @endfor
-                                    </div>
-                                    <svg class="w-4 h-4 text-[#1a73e8] ml-1" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.6L6 12.4l1.4-1.4 2.8 2.8 6.4-7.8 1.4 1.4-7.8 9.2z" />
-                                    </svg>
-                                </div>
-                                <p class="text-[#3c4043] text-[14px] leading-[1.6] line-clamp-4 font-sans">
-                                    We are extremely happy with the therapy services provide by gems clinic. We have seen a
-                                    remarkable improvement in our child over time. He has started trying to speak, his
-                                    hyperactivity has reduced significantly, and his eye contact with people has improved a lot
-                                </p>
-                                <a href="javascript:void(0)"
-                                    class="text-[#5f6368] hover:text-gray-900 text-[13px] mt-2 inline-block font-sans">Read
-                                    more</a>
-                            </div>
-
-                            {{-- Card 2 --}}
-                            <div
-                                class="bg-[#f8f9fa] rounded-[16px] p-6 shrink-0 w-[85%] sm:w-[320px] lg:w-[calc(100%/3-1rem)] snap-center text-left border border-gray-50 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-shadow">
-                                <div class="flex justify-between items-start mb-4">
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="w-10 h-10 rounded-full bg-[#1976d2] flex items-center justify-center text-white font-bold text-lg">
-                                            F</div>
-                                        <div>
-                                            <div class="font-bold text-[#202124] text-[15px] leading-tight font-sans">Fathima
-                                                va.</div>
-                                            <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">2024-11-04</div>
+                                    <div class="flex items-center gap-1 mb-3">
+                                        <div class="flex gap-0.5">
+                                            @for($s = 0; $s < $review->rating; $s++)
+                                                <svg viewBox="0 0 24 24" fill="#FBBC04" class="w-4 h-4">
+                                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                                </svg>
+                                            @endfor
+                                            @for($s = $review->rating; $s < 5; $s++)
+                                                <svg viewBox="0 0 24 24" fill="#dadce0" class="w-4 h-4">
+                                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                                </svg>
+                                            @endfor
                                         </div>
+                                        <svg class="w-4 h-4 text-[#1a73e8] ml-1" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.6L6 12.4l1.4-1.4 2.8 2.8 6.4-7.8 1.4 1.4-7.8 9.2z" />
+                                        </svg>
                                     </div>
-                                    <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
+                                    <p class="text-[#3c4043] text-[14px] leading-[1.6] line-clamp-4 font-sans">
+                                        {{ $review->review_text }}
+                                    </p>
                                 </div>
-                                <div class="flex items-center gap-1 mb-3">
-                                    <div class="flex gap-0.5">
-                                        @for($i = 0; $i < 5; $i++)
-                                            <svg viewBox="0 0 24 24" fill="#FBBC04" class="w-4 h-4">
-                                                <path
-                                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                            </svg>
-                                        @endfor
-                                    </div>
-                                    <svg class="w-4 h-4 text-[#1a73e8] ml-1" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.6L6 12.4l1.4-1.4 2.8 2.8 6.4-7.8 1.4 1.4-7.8 9.2z" />
-                                    </svg>
-                                </div>
-                                <p class="text-[#3c4043] text-[14px] leading-[1.6] line-clamp-4 font-sans">
-                                    One of the best child development centres in Calicut! Only after reaching here did I truly
-                                    feel that my son has received the right guidance and support. The staff are very
-                                    professional, caring, and patient.
-                                </p>
-                                <a href="javascript:void(0)"
-                                    class="text-[#5f6368] hover:text-gray-900 text-[13px] mt-2 inline-block font-sans">Read
-                                    more</a>
-                            </div>
-
-                            {{-- Card 3 --}}
-                            <div
-                                class="bg-[#f8f9fa] rounded-[16px] p-6 shrink-0 w-[85%] sm:w-[320px] lg:w-[calc(100%/3-1rem)] snap-center text-left border border-gray-50 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-shadow">
-                                <div class="flex justify-between items-start mb-4">
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="w-10 h-10 rounded-full bg-[#fbc02d] flex items-center justify-center text-white font-bold text-lg">
-                                            A</div>
-                                        <div>
-                                            <div class="font-bold text-[#202124] text-[15px] leading-tight font-sans">Aneesh
-                                                meladath.</div>
-                                            <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">2025-01-15</div>
-                                        </div>
-                                    </div>
-                                    <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
-                                </div>
-                                <div class="flex items-center gap-1 mb-3">
-                                    <div class="flex gap-0.5">
-                                        @for($i = 0; $i < 5; $i++)
-                                            <svg viewBox="0 0 24 24" fill="#FBBC04" class="w-4 h-4">
-                                                <path
-                                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                            </svg>
-                                        @endfor
-                                    </div>
-                                    <svg class="w-4 h-4 text-[#1a73e8] ml-1" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.6L6 12.4l1.4-1.4 2.8 2.8 6.4-7.8 1.4 1.4-7.8 9.2z" />
-                                    </svg>
-                                </div>
-                                <p class="text-[#3c4043] text-[14px] leading-[1.6] line-clamp-4 font-sans">
-                                    The best therapy centre for developmental delayed kids. Excellent teaching and skill
-                                    development methods using Kids are very happy because of friendly atmosphere.
-                                </p>
-                                <a href="javascript:void(0)"
-                                    class="text-[#5f6368] hover:text-gray-900 text-[13px] mt-2 inline-block font-sans">Read
-                                    more</a>
-                            </div>
-
-                            {{-- Card 4 --}}
-                            <div
-                                class="bg-[#f8f9fa] rounded-[16px] p-6 shrink-0 w-[85%] sm:w-[320px] lg:w-[calc(100%/3-1rem)] snap-center text-left border border-gray-50 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-shadow">
-                                <div class="flex justify-between items-start mb-4">
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="w-10 h-10 rounded-full bg-[#d32f2f] flex items-center justify-center text-white font-bold text-lg">
-                                            R</div>
-                                        <div>
-                                            <div class="font-bold text-[#202124] text-[15px] leading-tight font-sans">Rahul K.
+                                @endforeach
+                            @else
+                                {{-- Fallback: hardcoded reviews shown until admin adds DB entries --}}
+                                @php
+                                    $fallbackReviews = [
+                                        ['name' => 'Hasna Kp', 'color' => '#388e3c', 'date' => '2024-08-12', 'text' => 'We are extremely happy with the therapy services provide by gems clinic. We have seen a remarkable improvement in our child over time. He has started trying to speak, his hyperactivity has reduced significantly, and his eye contact with people has improved a lot'],
+                                        ['name' => 'Fathima va.', 'color' => '#1976d2', 'date' => '2024-11-04', 'text' => 'One of the best child development centres in Calicut! Only after reaching here did I truly feel that my son has received the right guidance and support. The staff are very professional, caring, and patient.'],
+                                        ['name' => 'Aneesh meladath.', 'color' => '#fbc02d', 'date' => '2025-01-15', 'text' => 'The best therapy centre for developmental delayed kids. Excellent teaching and skill development methods using Kids are very happy because of friendly atmosphere.'],
+                                        ['name' => 'Rahul K.', 'color' => '#d32f2f', 'date' => '2025-02-28', 'text' => "Truly grateful for the progress we've seen. The staff is like family. They've supported us as much as they've supported our son. Excellent environment."],
+                                    ];
+                                @endphp
+                                @foreach($fallbackReviews as $fb)
+                                <div
+                                    class="bg-[#f8f9fa] rounded-[16px] p-6 shrink-0 w-[85%] sm:w-[320px] lg:w-[calc(100%/3-1rem)] snap-center text-left border border-gray-50 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-shadow">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                                                style="background-color: {{ $fb['color'] }}">
+                                                {{ mb_strtoupper(mb_substr($fb['name'], 0, 1)) }}</div>
+                                            <div>
+                                                <div class="font-bold text-[#202124] text-[15px] leading-tight font-sans">{{ $fb['name'] }}</div>
+                                                <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">{{ $fb['date'] }}</div>
                                             </div>
-                                            <div class="text-[#5f6368] text-[13px] mt-0.5 font-sans">2025-02-28</div>
                                         </div>
+                                        <a href="{{ $googleReviewsUrl }}" target="_blank" rel="noopener noreferrer" title="View on Google" class="transition-transform hover:scale-110">
+                                            <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                                alt="Google" width="20" height="20" class="w-5 h-5 mt-1">
+                                        </a>
                                     </div>
-                                    <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
-                                        alt="Google" width="20" height="20" loading="lazy" class="w-5 h-5 mt-1">
-                                </div>
-                                <div class="flex items-center gap-1 mb-3">
-                                    <div class="flex gap-0.5">
-                                        @for($i = 0; $i < 5; $i++)
-                                            <svg viewBox="0 0 24 24" fill="#FBBC04" class="w-4 h-4">
-                                                <path
-                                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                                            </svg>
-                                        @endfor
+                                    <div class="flex items-center gap-1 mb-3">
+                                        <div class="flex gap-0.5">
+                                            @for($i = 0; $i < 5; $i++)
+                                                <svg viewBox="0 0 24 24" fill="#FBBC04" class="w-4 h-4">
+                                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                                </svg>
+                                            @endfor
+                                        </div>
+                                        <svg class="w-4 h-4 text-[#1a73e8] ml-1" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.6L6 12.4l1.4-1.4 2.8 2.8 6.4-7.8 1.4 1.4-7.8 9.2z" />
+                                        </svg>
                                     </div>
-                                    <svg class="w-4 h-4 text-[#1a73e8] ml-1" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.8 14.6L6 12.4l1.4-1.4 2.8 2.8 6.4-7.8 1.4 1.4-7.8 9.2z" />
-                                    </svg>
+                                    <p class="text-[#3c4043] text-[14px] leading-[1.6] line-clamp-4 font-sans">
+                                        {{ $fb['text'] }}
+                                    </p>
                                 </div>
-                                <p class="text-[#3c4043] text-[14px] leading-[1.6] line-clamp-4 font-sans">
-                                    Truly grateful for the progress we've seen. The staff is like family. They've supported us
-                                    as much as they've supported our son. Excellent environment.
-                                </p>
-                                <a href="javascript:void(0)"
-                                    class="text-[#5f6368] hover:text-gray-900 text-[13px] mt-2 inline-block font-sans">Read
-                                    more</a>
-                            </div>
+                                @endforeach
+                            @endif
 
                         </div>
                     </div>
@@ -2596,7 +2549,152 @@
                     });
                 </script>
 
-                <!-- ================= VIDEO THEATER LIGHTBOX MODAL ================= -->
+                
+            </div>
+        </section>
+
+        {{-- ================= FAQ SECTION ================= --}}
+        <section class="py-16 lg:py-24 bg-white relative overflow-hidden">
+            <div class="doodle-bg-dark"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">Frequently Asked
+                    Questions</h2>
+
+                <div class="space-y-4" data-aos="fade-up">
+                    <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                            <h3 class="font-semibold text-lg text-gray-900">How do I know if my child needs therapy?</h3>
+                            <span class="text-teal-500 text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600">
+                            If you notice delays in speech, motor skills, social interaction, or behavior compared to other
+                            children of the same age, it's best to consult a professional. Early intervention yields the best
+                            results.
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                            <h3 class="font-semibold text-lg text-gray-900">Do you offer online consultations?</h3>
+                            <span class="text-teal-500 text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600">
+                            Yes, we offer tele-therapy and online parent counseling sessions for families who cannot visit our
+                            center physically.
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
+                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                            <h3 class="font-semibold text-lg text-gray-900">What ages do you treat?</h3>
+                            <span class="text-teal-500 text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-600">
+                            We work with children from infancy (Early Intervention) up to adolescence (18 years), providing
+                            age-appropriate therapies and support.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            {{-- FAQPage Structured Data (E-E-A-T) --}}
+            <script type="application/ld+json">
+            {
+              "@@context": "https://schema.org",
+              "@@type": "FAQPage",
+              "mainEntity": [{
+                "@@type": "Question",
+                "name": "How do I know if my child needs therapy?",
+                "acceptedAnswer": {
+                  "@@type": "Answer",
+                  "text": "If you notice delays in speech, motor skills, social interaction, or behavior compared to other children of the same age, it's best to consult a professional. Early intervention yields the best results."
+                }
+              }, {
+                "@@type": "Question",
+                "name": "Do you offer online consultations?",
+                "acceptedAnswer": {
+                  "@@type": "Answer",
+                  "text": "Yes, we offer tele-therapy and online parent counseling sessions for families who cannot visit our center physically."
+                }
+              }, {
+                "@@type": "Question",
+                "name": "What ages do you treat?",
+                "acceptedAnswer": {
+                  "@@type": "Answer",
+                  "text": "We work with children from infancy (Early Intervention) up to adolescence (18 years), providing age-appropriate therapies and support."
+                }
+              }]
+            }
+            </script>
+        </section>
+
+        {{-- ================= FINAL CTA ================= --}}
+        <section class="py-12 bg-white relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="rounded-[30px] sm:rounded-[40px] p-6 lg:p-0 flex flex-col lg:flex-row items-center relative overflow-hidden shadow-lg transition-transform hover:-translate-y-1 duration-500"
+                    style="background-color: #EA6F71;" data-aos="zoom-in">
+
+                    {{-- Faint Lightbulb Doodle Background --}}
+                    <div
+                        class="absolute left-1/2 lg:left-[25%] top-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-[0.08] pointer-events-none z-0">
+                        <svg class="w-[300px] h-[300px] lg:w-[450px] lg:h-[450px]" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="0.3" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M9 18h6" />
+                            <path d="M10 21h4" />
+                            <path
+                                d="M12 2a7 7 0 0 0-7 7c0 2 1 3.5 2 5 .7.7 1.3 2 1.5 3h5c.2-1 1-2.3 1.5-3 1-1.5 2-3 2-5a7 7 0 0 0-7-7z" />
+                            <!-- Subtle rays -->
+                            <path stroke-width="0.3"
+                                d="M12 0v2 M4.5 4.5l1.5 1.5 M0 12h2 M4.5 19.5l1.5-1.5 M19.5 4.5l-1.5 1.5 M24 12h-2 M19.5 19.5l-1.5-1.5" />
+                        </svg>
+                    </div>
+
+                    {{-- Left Text Content --}}
+                    <div class="lg:w-1/2 relative z-10 w-full text-center lg:text-left px-4 lg:pl-16 py-10 lg:py-16">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-8 leading-[1.15] tracking-tight"
+                            style="font-family: 'Fredoka', sans-serif;">
+                            Let's Connect and<br class="hidden lg:block"> Create Possibilities
+                        </h2>
+                        <a href="/contact"
+                            class="inline-block bg-white text-[#EA6F71] font-bold text-lg px-8 py-4 rounded-full hover:bg-gray-50 transition-all shadow-md hover:shadow-xl transform hover:-translate-y-1">
+                            Connect with Us
+                        </a>
+                    </div>
+
+                    {{-- Right Graphics Content --}}
+                    <div
+                        class="lg:w-1/2 relative h-[300px] sm:h-[350px] lg:h-[400px] w-full flex items-end justify-center lg:justify-end overflow-hidden mt-6 lg:mt-0 z-10">
+
+                        {{-- Graphic Mask Circle Background --}}
+                        <div class="absolute bottom-0 right-0 w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] rounded-full translate-y-[20%] translate-x-[10%] transition-transform duration-700 hover:scale-105 overflow-hidden"
+                            style="background-color: rgba(255,255,255,0.15);">
+                            <img loading="lazy" decoding="async" src="{{ asset('images/image1.jpg') }}" alt="Child participating in special education activities at GEMS CDC" width="500" height="500"
+                                class="w-full h-full object-cover opacity-90 transition-all duration-700 mix-blend-overlay hover:mix-blend-normal hover:opacity-100">
+                        </div>
+
+                        {{-- Green Bubble AIMS CDC --}}
+                        <div class="absolute top-[15%] left-[5%] lg:left-[10%] z-20 animate-bounce"
+                            style="animation-duration: 4s;">
+                            <div
+                                class="bg-[#97B41A] text-white font-bold text-lg px-0 py-0 rounded-full shadow-xl relative w-24 h-24 lg:w-28 lg:h-28 flex flex-col items-center justify-center transform -rotate-3 border-4 border-white backdrop-blur-sm">
+                                <span>GEMS</span>
+                                <span>CDC</span>
+                                <!-- Bubble pointer tail -->
+                                <div
+                                    class="absolute -bottom-1.5 right-5 w-5 h-5 bg-[#97B41A] transform rotate-45 rounded-sm shadow-sm z-[-1] border-b-4 border-r-4 border-white">
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Floating abstract dots --}}
+                        <div class="absolute top-[30%] right-[15%] w-5 h-5 rounded-full bg-white opacity-50 blur-[2px]"></div>
+                        <div class="absolute bottom-[25%] left-[15%] w-8 h-8 rounded-full bg-white opacity-30 blur-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- ================= VIDEO THEATER LIGHTBOX MODAL ================= -->
                 <div id="video-story-modal" 
                      class="fixed inset-0 z-[99999] hidden items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md opacity-0 transition-opacity duration-300"
                      role="dialog" 
@@ -2679,118 +2777,6 @@
                         }
                     });
                 </script>
-            </div>
-        </section>
-
-        {{-- ================= FAQ SECTION ================= --}}
-        <section class="py-16 lg:py-24 bg-white relative overflow-hidden">
-            <div class="doodle-bg-dark"></div>
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">Frequently Asked
-                    Questions</h2>
-
-                <div class="space-y-4" data-aos="fade-up">
-                    <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                            <h3 class="font-semibold text-lg text-gray-900">How do I know if my child needs therapy?</h3>
-                            <span class="text-teal-500 text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
-                        </summary>
-                        <div class="px-6 pb-6 text-gray-600">
-                            If you notice delays in speech, motor skills, social interaction, or behavior compared to other
-                            children of the same age, it's best to consult a professional. Early intervention yields the best
-                            results.
-                        </div>
-                    </details>
-
-                    <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                            <h3 class="font-semibold text-lg text-gray-900">Do you offer online consultations?</h3>
-                            <span class="text-teal-500 text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
-                        </summary>
-                        <div class="px-6 pb-6 text-gray-600">
-                            Yes, we offer tele-therapy and online parent counseling sessions for families who cannot visit our
-                            center physically.
-                        </div>
-                    </details>
-
-                    <details class="bg-white rounded-xl shadow-sm overflow-hidden group">
-                        <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                            <h3 class="font-semibold text-lg text-gray-900">What ages do you treat?</h3>
-                            <span class="text-teal-500 text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
-                        </summary>
-                        <div class="px-6 pb-6 text-gray-600">
-                            We work with children from infancy (Early Intervention) up to adolescence (18 years), providing
-                            age-appropriate therapies and support.
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        {{-- ================= FINAL CTA ================= --}}
-        <section class="py-12 bg-white relative overflow-hidden">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="rounded-[30px] sm:rounded-[40px] p-6 lg:p-0 flex flex-col lg:flex-row items-center relative overflow-hidden shadow-lg transition-transform hover:-translate-y-1 duration-500"
-                    style="background-color: #EA6F71;" data-aos="zoom-in">
-
-                    {{-- Faint Lightbulb Doodle Background --}}
-                    <div
-                        class="absolute left-1/2 lg:left-[25%] top-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-[0.08] pointer-events-none z-0">
-                        <svg class="w-[300px] h-[300px] lg:w-[450px] lg:h-[450px]" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="0.3" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M9 18h6" />
-                            <path d="M10 21h4" />
-                            <path
-                                d="M12 2a7 7 0 0 0-7 7c0 2 1 3.5 2 5 .7.7 1.3 2 1.5 3h5c.2-1 1-2.3 1.5-3 1-1.5 2-3 2-5a7 7 0 0 0-7-7z" />
-                            <!-- Subtle rays -->
-                            <path stroke-width="0.3"
-                                d="M12 0v2 M4.5 4.5l1.5 1.5 M0 12h2 M4.5 19.5l1.5-1.5 M19.5 4.5l-1.5 1.5 M24 12h-2 M19.5 19.5l-1.5-1.5" />
-                        </svg>
-                    </div>
-
-                    {{-- Left Text Content --}}
-                    <div class="lg:w-1/2 relative z-10 w-full text-center lg:text-left px-4 lg:pl-16 py-10 lg:py-16">
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-8 leading-[1.15] tracking-tight"
-                            style="font-family: 'Fredoka', sans-serif;">
-                            Let's Connect and<br class="hidden lg:block"> Create Possibilities
-                        </h2>
-                        <a href="/contact"
-                            class="inline-block bg-white text-[#EA6F71] font-bold text-lg px-8 py-4 rounded-full hover:bg-gray-50 transition-all shadow-md hover:shadow-xl transform hover:-translate-y-1">
-                            Connect with Us
-                        </a>
-                    </div>
-
-                    {{-- Right Graphics Content --}}
-                    <div
-                        class="lg:w-1/2 relative h-[300px] sm:h-[350px] lg:h-[400px] w-full flex items-end justify-center lg:justify-end overflow-hidden mt-6 lg:mt-0 z-10">
-
-                        {{-- Graphic Mask Circle Background --}}
-                        <div class="absolute bottom-0 right-0 w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] rounded-full translate-y-[20%] translate-x-[10%] transition-transform duration-700 hover:scale-105 overflow-hidden"
-                            style="background-color: rgba(255,255,255,0.15);">
-                            <img loading="lazy" decoding="async" src="{{ asset('images/image1.jpg') }}" alt="Child participating in special education activities at GEMS CDC" width="500" height="500" loading="lazy"
-                                class="w-full h-full object-cover opacity-90 transition-all duration-700 mix-blend-overlay hover:mix-blend-normal hover:opacity-100">
-                        </div>
-
-                        {{-- Green Bubble AIMS CDC --}}
-                        <div class="absolute top-[15%] left-[5%] lg:left-[10%] z-20 animate-bounce"
-                            style="animation-duration: 4s;">
-                            <div
-                                class="bg-[#97B41A] text-white font-bold text-lg px-0 py-0 rounded-full shadow-xl relative w-24 h-24 lg:w-28 lg:h-28 flex flex-col items-center justify-center transform -rotate-3 border-4 border-white backdrop-blur-sm">
-                                <span>GEMS</span>
-                                <span>CDC</span>
-                                <!-- Bubble pointer tail -->
-                                <div
-                                    class="absolute -bottom-1.5 right-5 w-5 h-5 bg-[#97B41A] transform rotate-45 rounded-sm shadow-sm z-[-1] border-b-4 border-r-4 border-white">
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- Floating abstract dots --}}
-                        <div class="absolute top-[30%] right-[15%] w-5 h-5 rounded-full bg-white opacity-50 blur-[2px]"></div>
-                        <div class="absolute bottom-[25%] left-[15%] w-8 h-8 rounded-full bg-white opacity-30 blur-sm"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
 @endsection
+
+

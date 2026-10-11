@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Our Team | GEMS Child Development Centre')
+@section('title', 'Pediatric Specialists & Therapy Team | GEMS CDC Kozhikode')
 @section('meta_description', 'Meet the certified pediatric specialists and developmental therapists at GEMS Kozhikode, Kerala dedicated to guiding children with personalized care plans.')
 
 @section('content')
@@ -59,6 +59,14 @@
                         <div>
                             <h3 class="text-3xl font-bold text-gray-900 mb-1">Mushtaq</h3>
                             <p class="text-teal-600 font-bold uppercase tracking-wider text-sm">Founder & CEO</p>
+                            <div class="mt-2 flex flex-wrap items-center gap-2">
+                                <span class="inline-flex items-center px-3 py-1 bg-teal-50 text-teal-800 rounded-full text-xs font-semibold border border-teal-100">
+                                    M.Sc, M.Phil Psy.
+                                </span>
+                                <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold border border-gray-200">
+                                    CRR No: A68882
+                                </span>
+                            </div>
                         </div>
                         <p class="text-gray-600 leading-relaxed text-lg italic">
                             "Our mission is to create a world where every child, regardless of their challenges, can
@@ -66,11 +74,11 @@
                             unique needs of each child."
                         </p>
                         <div class="flex gap-4">
-                            <a href="#"
+                            <a href="https://www.linkedin.com/in/mushthaq-parapparakkal-b5591b1a8/" target="_blank" rel="noopener noreferrer"
                                 class="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 hover:bg-teal-600 hover:text-white transition-all shadow-sm">
                                 <span class="text-lg">in</span>
                             </a>
-                            <a href="mailto:ceo@gemscdc.com"
+                            <a href="mailto:gemsrehab@gmail.com"
                                 class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center text-pink-600 hover:bg-pink-600 hover:text-white transition-all shadow-sm">
                                 <span class="text-lg">✉</span>
                             </a>
@@ -105,10 +113,9 @@
                         </div>
                         <div class="text-center space-y-2">
                             <h3 class="text-xl font-bold text-gray-900 uppercase">Narmada Soman</h3>
-                            <p class="text-[#32A8B8] text-sm font-bold uppercase tracking-wide">Psychologist</p>
-                            <div class="pt-2">
-                                <span
-                                    class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">Clinical Psychology</span>
+                            <p class="text-[#32A8B8] text-sm font-bold uppercase tracking-wide">Consultant Psychologist</p>
+                            <div class="pt-2 flex flex-col items-center gap-2">
+                                <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">M.Sc Psychology</span>
                             </div>
                         </div>
                     </div>
@@ -128,10 +135,9 @@
                         </div>
                         <div class="text-center space-y-2">
                             <h3 class="text-xl font-bold text-gray-900 uppercase">Manjima K.</h3>
-                            <p class="text-[#EA6F71] text-sm font-bold uppercase tracking-wide">Speech Language Pathologist</p>
-                            <div class="pt-2">
-                                <span
-                                    class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">Speech & Language Therapy</span>
+                            <p class="text-[#EA6F71] text-xs font-bold uppercase tracking-wide">Audiologist & Speech Language Pathologist</p>
+                            <div class="pt-2 flex flex-col items-center gap-2">
+                                <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">BASLP, OPT Level 1</span>
                             </div>
                         </div>
                     </div>
@@ -150,11 +156,10 @@
                             </div>
                         </div>
                         <div class="text-center space-y-2">
-                            <h3 class="text-xl font-bold text-gray-900 uppercase">Prarthana.P P</h3>
-                            <p class="text-[#E99D1D] text-sm font-bold uppercase tracking-wide">Psychologist</p>
-                            <div class="pt-2">
-                                <span
-                                    class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">Clinical Psychology</span>
+                            <h3 class="text-xl font-bold text-gray-900 uppercase">Prarthana P.P</h3>
+                            <p class="text-[#E99D1D] text-sm font-bold uppercase tracking-wide">Consultant Psychologist</p>
+                            <div class="pt-2 flex flex-col items-center gap-2">
+                                <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">M.Sc Psychology</span>
                             </div>
                         </div>
                     </div>
@@ -175,9 +180,9 @@
                         <div class="text-center space-y-2">
                             <h3 class="text-xl font-bold text-gray-900 uppercase">Malavika K.</h3>
                             <p class="text-[#97B41A] text-sm font-bold uppercase tracking-wide">Special Educator</p>
-                            <div class="pt-2">
-                                <span
-                                    class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">Special Education</span>
+                            <div class="pt-2 flex flex-col items-center gap-1">
+                                <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">BA Special Education ID</span>
+                                <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">BA Economics</span>
                             </div>
                         </div>
                     </div>
@@ -196,11 +201,11 @@
                             </div>
                         </div>
                         <div class="text-center space-y-2">
-                            <h3 class="text-xl font-bold text-gray-900 uppercase">Thara Ranveendran</h3>
-                            <p class="text-[#32A8B8] text-sm font-bold uppercase tracking-wide">Coordinator</p>
-                            <div class="pt-2">
-                                <span
-                                    class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">Administration</span>
+                            <h3 class="text-xl font-bold text-gray-900 uppercase">Thara K.K</h3>
+                            <p class="text-[#32A8B8] text-sm font-bold uppercase tracking-wide">Clinical Coordinator</p>
+                            <div class="pt-2 flex flex-col items-center gap-1">
+                                <span class="px-3 py-1 bg-white rounded-full text-[11px] font-medium text-gray-500 border border-gray-100">B.Sc & MA Psychology, PG DCP</span>
+                                <span class="px-3 py-1 bg-white rounded-full text-[11px] font-medium text-gray-500 border border-gray-100">MSW Medical and Psychiatry</span>
                             </div>
                         </div>
                     </div>
@@ -209,7 +214,7 @@
 
             <div class="mt-20 text-center">
                 <p class="mb-8 text-gray-600">Want to join our amazing team of professionals?</p>
-                <a href="/contact"
+                <a href="/career"
                     class="inline-flex items-center gap-2 bg-[#32A8B8] text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-[#32A8B8]/20 transition-all hover:-translate-y-1">
                     View Career Opportunities
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -271,4 +276,129 @@
         </div>
     </section>
 
+    {{-- Team Person Structured Data (E-E-A-T) --}}
+    @push('head')
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@graph": [
+        {
+          "@@type": "Person",
+          "name": "Mushthaq",
+          "jobTitle": "Founder & CEO",
+          "description": "M.Sc, M.Phil Psy., CRR No: A68882",
+          "worksFor": { "@@type": "MedicalOrganization", "name": "GEMS Child Development Centre" }
+        },
+        {
+          "@@type": "Person",
+          "name": "Narmada Soman",
+          "jobTitle": "Consultant Psychologist",
+          "description": "M.Sc PSYCHOLOGY",
+          "worksFor": { "@@type": "MedicalOrganization", "name": "GEMS Child Development Centre" }
+        },
+        {
+          "@@type": "Person",
+          "name": "Manjima K.",
+          "jobTitle": "Audiologist and Speech Language Pathologist",
+          "description": "BASLP, OPT Level 1",
+          "worksFor": { "@@type": "MedicalOrganization", "name": "GEMS Child Development Centre" }
+        },
+        {
+          "@@type": "Person",
+          "name": "Prarthana P.P",
+          "jobTitle": "Consultant Psychologist",
+          "description": "M.Sc PSYCHOLOGY",
+          "worksFor": { "@@type": "MedicalOrganization", "name": "GEMS Child Development Centre" }
+        },
+        {
+          "@@type": "Person",
+          "name": "Malavika K.",
+          "jobTitle": "Special Educator",
+          "description": "BA SPECIAL EDUCATION ID, BA ECONOMICS",
+          "worksFor": { "@@type": "MedicalOrganization", "name": "GEMS Child Development Centre" }
+        },
+        {
+          "@@type": "Person",
+          "name": "Thara K.K",
+          "jobTitle": "Clinical Coordinator",
+          "description": "B.Sc Psychology, MA Psychology, PG DCP, MSW Medical and Psychiatry",
+          "worksFor": { "@@type": "MedicalOrganization", "name": "GEMS Child Development Centre" }
+        }
+      ]
+    }
+    </script>
+    @endpush
+
+    {-- Breadcrumb Schema --}
+    @push('head')
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+        { "@type": "ListItem", "position": 2, "name": "Our Team", "item": "{{ url('/team') }}" }
+      ]
+    }
+    </script>
+    @endpush
+
+
+    {{-- Medical Practitioner Schema (E-E-A-T) --}}
+    @push('head')
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Physician",
+          "name": "Mushtaq Parapparakkal",
+          "jobTitle": "Founder & CEO, Psychologist",
+          "hasCredential": "CRR No: A68882",
+          "alumniOf": "M.Sc, M.Phil Psy",
+          "worksFor": { "@type": "MedicalClinic", "name": "GEMS Child Development Centre" },
+          "sameAs": "https://www.linkedin.com/in/mushthaq-parapparakkal-b5591b1a8/"
+        },
+        {
+          "@type": "Physician",
+          "name": "Narmada Soman",
+          "jobTitle": "Consultant Psychologist",
+          "alumniOf": "M.Sc Psychology",
+          "worksFor": { "@type": "MedicalClinic", "name": "GEMS Child Development Centre" }
+        },
+        {
+          "@type": "Physician",
+          "name": "Manjima K.",
+          "jobTitle": "Audiologist & Speech Language Pathologist",
+          "hasCredential": "BASLP, OPT Level 1",
+          "worksFor": { "@type": "MedicalClinic", "name": "GEMS Child Development Centre" }
+        },
+        {
+          "@type": "Physician",
+          "name": "Prarthana P.P",
+          "jobTitle": "Consultant Psychologist",
+          "alumniOf": "M.Sc Psychology",
+          "worksFor": { "@type": "MedicalClinic", "name": "GEMS Child Development Centre" }
+        },
+        {
+          "@type": "Physician",
+          "name": "Malavika K.",
+          "jobTitle": "Special Educator",
+          "alumniOf": "BA Special Education ID",
+          "worksFor": { "@type": "MedicalClinic", "name": "GEMS Child Development Centre" }
+        },
+        {
+          "@type": "Physician",
+          "name": "Thara K.K",
+          "jobTitle": "Clinical Coordinator",
+          "alumniOf": "MSW Medical and Psychiatry",
+          "worksFor": { "@type": "MedicalClinic", "name": "GEMS Child Development Centre" }
+        }
+      ]
+    }
+    </script>
+    @endpush
+
 @endsection
+
+

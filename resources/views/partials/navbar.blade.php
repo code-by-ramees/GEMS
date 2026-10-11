@@ -1,10 +1,10 @@
-<header class="sticky top-0 z-[60] bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+<header class="fixed w-full top-0 z-[60] bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
 
             <div class="flex items-center flex-shrink-0">
                 <a href="/" class="group block">
-                    <img src="{{ asset('images/Logo.png') }}" alt="GEMS Logo"
+                    <img src="{{ asset('images/Logo.png') }}" alt="GEMS Logo" width="160" height="60"
                         class="h-10 sm:h-12 lg:h-15 w-auto object-contain transition-all duration-300 group-hover:scale-105"
                         style="image-rendering: -webkit-optimize-contrast; will-change: transform;">
                 </a>
