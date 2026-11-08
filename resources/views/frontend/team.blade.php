@@ -181,8 +181,8 @@
                             <h3 class="text-xl font-bold text-gray-900 uppercase">Malavika K.</h3>
                             <p class="text-[#97B41A] text-sm font-bold uppercase tracking-wide">Special Educator</p>
                             <div class="pt-2 flex flex-col items-center gap-1">
-                                <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">BA Special Education ID</span>
-                                <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">BA Economics</span>
+                                <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">B.Ed Special Education</span>
+                                <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-500 border border-gray-100">CRR NO: A118290</span>
                             </div>
                         </div>
                     </div>
@@ -314,7 +314,7 @@
           "@@type": "Person",
           "name": "Malavika K.",
           "jobTitle": "Special Educator",
-          "description": "BA SPECIAL EDUCATION ID, BA ECONOMICS",
+          "description": "B.Ed Special Education, CRR NO: A118290",
           "worksFor": { "@@type": "MedicalOrganization", "name": "GEMS Child Development Centre" }
         },
         {
@@ -329,11 +329,11 @@
     </script>
     @endpush
 
-    {-- Breadcrumb Schema --}
+    {{-- Breadcrumb Schema --}}
     @push('head')
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+      "@@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
@@ -348,7 +348,7 @@
     @push('head')
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+      "@@context": "https://schema.org",
       "@graph": [
         {
           "@type": "Physician",
@@ -384,7 +384,8 @@
           "@type": "Physician",
           "name": "Malavika K.",
           "jobTitle": "Special Educator",
-          "alumniOf": "BA Special Education ID",
+          "hasCredential": "CRR NO: A118290",
+          "alumniOf": "B.Ed Special Education",
           "worksFor": { "@type": "MedicalClinic", "name": "GEMS Child Development Centre" }
         },
         {
